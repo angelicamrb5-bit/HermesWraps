@@ -1,0 +1,17 @@
+{
+  // Consultation form endpoint: receives POST /api/consult from book.html and
+  // emails the request to the business inbox. The site itself stays on Pages.
+  "name": "hermeswraps-consult",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "routes": [
+    { "pattern": "hermeswraps.com/api/consult", "zone_name": "hermeswraps.com" }
+  ],
+  "send_email": [
+    { "name": "EMAIL", "allowed_destination_addresses": ["hermeswraps@gmail.com"] }
+  ],
+  "vars": {
+    "TO": "hermeswraps@gmail.com",
+    "FROM": "website@hermeswraps.com"
+  }
+}

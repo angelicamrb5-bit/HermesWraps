@@ -4,6 +4,8 @@
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Data saver on: keep the poster, let the visitor start the video */
+  var saveData = !!(navigator.connection && navigator.connection.saveData);
 
   $$('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
@@ -71,7 +73,7 @@
       if (hv.paused) { var p = hv.play(); if (p && p.catch) p.catch(function () {}); setState(true); }
       else { hv.pause(); setState(false); }
     });
-    if (reduced) { setState(false); }
+    if (reduced || saveData) { setState(false); }
     else {
       var p = hv.play();
       if (p && p.then) p.then(function () { setState(true); }).catch(function () { setState(false); });
@@ -116,7 +118,7 @@
       if (hv && !hv.paused) hv.pause();
     });
     v.addEventListener('pause', function () {
-      if (hv && toggle && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !clips.some(function (o) { return !o.paused; })) {
+      if (hv && toggle && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !saveData && !clips.some(function (o) { return !o.paused; })) {
         var q = hv.play(); if (q && q.catch) q.catch(function () {});
       }
     });

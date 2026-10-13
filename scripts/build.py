@@ -5,7 +5,9 @@ index.html is edited by hand. This script:
      the header, closing band and footer from index.html;
   2. refreshes the type tiles in index.html (between <!--TYPE-TILES--> markers);
   3. gives every card photo a srcset (800px + 1600px) so phones get sharp images;
-  4. adds ?v=<hash> to CSS/JS links so browsers never mix old and new files.
+  4. adds ?v=<hash> to CSS/JS links so browsers never mix old and new files;
+  5. writes a WebP copy of every card photo and serves it through <picture>,
+     keeping the JPEG as the fallback.
 
 Run:  python3 scripts/build.py
 """
@@ -61,7 +63,15 @@ def responsive(m):
     if not (os.path.exists('assets/' + base + '.jpg') and os.path.exists('assets/' + base + '-800.jpg')):
         return tag
     tag = tag.replace(sm.group(0), f'src="/assets/{base}-800.jpg" srcset="/assets/{base}-800.jpg 800w, /assets/{base}.jpg 1600w" sizes="{SIZES}"')
-    return tag
+    webp(base + '-800'); webp(base)
+    return (f'<picture><source type="image/webp" srcset="/assets/{base}-800.webp 800w, /assets/{base}.webp 1600w" sizes="{SIZES}">'
+            + tag + '</picture>')
+
+
+def webp(name):
+    src, out = 'assets/' + name + '.jpg', 'assets/' + name + '.webp'
+    if not os.path.exists(out) or os.path.getmtime(out) < os.path.getmtime(src):
+        Image.open(src).save(out, 'WEBP', quality=80, method=6)
 
 
 def bust(html):
@@ -74,7 +84,7 @@ def bust(html):
 
 for fn in ['index.html', 'work.html', 'book.html', 'terms.html', '404.html']:
     html = open(fn).read()
-    html = re.sub(r'<div class="media"><img [^>]+>', lambda m: re.sub(r'<img [^>]+>', responsive, m.group(0)), html)
+    html = re.sub(r'<div class="media">(?:<picture><source [^>]+>)?(<img [^>]+>)(?:</picture>)?', lambda m: '<div class="media">' + responsive(re.match(r'.+', m.group(1))), html)
     html = bust(html)
     open(fn, 'w').write(html)
 print('built', len(projects), 'projects')

@@ -36,7 +36,6 @@ projects = [
   ("vehicle", ["silverado-hood-angle", "silverado-hood-close"], "Chevrolet Silverado | hood wrap", "HOOD WRAP · 1 VEHICLE", "Hood wrap, with a close view of the edges.", "Chevrolet Silverado with a wrapped hood"),
   ("vehicle", ["bmw-x1-hood-front", "bmw-x1-hood-roof-close"], "BMW X1 | gloss black hood & roof", "PARTIAL WRAP · 1 VEHICLE", "Gloss black hood and roof.", "BMW X1 with a gloss black hood and roof"),
 ]
-badge = {"commercial": "Commercial", "vehicle": "Vehicle", "signs": "Signs", "vinyl": "Vinyl"}
 from PIL import Image
 ROOT = os.path.join(PUBLIC, 'assets') + '/'
 def thumb(p): return p + ('-800' if p.startswith(W) else '') + '.jpg'
@@ -49,7 +48,6 @@ for i, (cat, imgs, title, meta, line, alt) in enumerate(projects):
     count = f' <span class="count">· {len(imgs)} photos</span>' if len(imgs) > 1 else ''
     cards.append(f'''          <article class="project-card" data-cat="{cat}">
             <div class="media"><img src="/assets/{thumb(imgs[0])}" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async"></div>
-            <p class="tagline-bar badge"><span>{badge[cat]}</span></p>
             <h3><button type="button" data-zoom="{full}" aria-haspopup="dialog">{t}</button></h3>
             <span class="meta mono">{meta}{count}</span>
             <p>{line}</p>
@@ -57,10 +55,10 @@ for i, (cat, imgs, title, meta, line, alt) in enumerate(projects):
 
 
 TYPES = [
-  ("commercial", "Commercial &amp; work vehicles", "Vans, box trucks, tow trucks, dump trucks and fleet vehicles.", W+"box-truck-tire-shop-side-800.jpg", "Box truck with full printed graphics for a tire shop"),
+  ("commercial", "Business &amp; fleet vehicles", "Vans, box trucks, tow trucks, dump trucks and company cars.", W+"box-truck-tire-shop-side-800.jpg", "Box truck with full printed graphics for a tire shop"),
+  ("vehicle", "Personal vehicles", "Partial wraps, color changes, roofs, hoods and chrome delete.", "corvette-front.jpg", "White Corvette C8 with a gloss black roof and mirrors"),
   ("signs", "Signs &amp; storefronts", "Window and door graphics for storefronts.", W+"storefront-windows-pet-store-800.jpg", "Pet store storefront with full-color window graphics"),
   ("vinyl", "Other vinyl", "Display fridge and freezer wraps, decals and custom vinyl.", W+"display-fridge-desserts-2-800.jpg", "Display fridge wrapped with a dessert brand's graphics"),
-  ("vehicle", "Personal vehicles", "Partial wraps, color changes, roofs, hoods and chrome delete.", "corvette-front.jpg", "White Corvette C8 with a gloss black roof and mirrors"),
 ]
 def type_tiles(level='h3'):
     out = []
@@ -80,29 +78,30 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
       <div class="wrap">
         <span class="eyebrow">Selected work</span>
         <h1 id="workTitle">Work measured against our clients' standards.</h1>
-        <p class="lead">Real Hermes Wraps projects in Tampa Bay: fleet and work-vehicle graphics, storefronts, appliance wraps and personal vehicles. Choose a type of work to open its catalog.</p>
+        <p class="lead">Real Hermes Wraps projects in Tampa Bay: business and fleet vehicles, personal vehicles, storefronts and other vinyl. Choose a type of work to open its catalog.</p>
       </div>
     </section>
 
-    <section class="section" style="padding-top:0" id="types" aria-label="Types of work">
+    <section class="section flush-top" id="types" aria-label="Types of work">
       <div class="wrap">
         {type_tiles('h2')}
       </div>
     </section>
 
-    <section class="section" style="padding-top:0" id="catalog" aria-labelledby="catalogTitle" hidden>
+    <section class="section flush-top" id="catalog" aria-labelledby="catalogTitle" hidden>
       <div class="wrap">
         <a class="text-link" href="/work" data-type-reset><span class="arrow" aria-hidden="true">←</span> All types of work</a>
         <h2 id="catalogTitle" tabindex="-1">Catalog</h2>
         <ul class="filters" aria-label="Type of work">
-          <li><button class="filter" type="button" data-filter="commercial" aria-pressed="false">Commercial &amp; work vehicles</button></li>
+          <li><button class="filter" type="button" data-filter="commercial" aria-pressed="false">Business &amp; fleet vehicles</button></li>
+          <li><button class="filter" type="button" data-filter="vehicle" aria-pressed="false">Personal vehicles</button></li>
           <li><button class="filter" type="button" data-filter="signs" aria-pressed="false">Signs &amp; storefronts</button></li>
           <li><button class="filter" type="button" data-filter="vinyl" aria-pressed="false">Other vinyl</button></li>
-          <li><button class="filter" type="button" data-filter="vehicle" aria-pressed="false">Personal vehicles</button></li>
         </ul>
         <p class="sr-only" id="filterStatus" role="status" aria-live="polite"></p>
         <div class="card-grid" id="workGrid">
 {chr(10).join(cards)}
+          <p class="inline-prompt" id="midPrompt">Want one like this? <a href="/book" data-track="cta-work-mid">Book a free consultation.</a></p>
         </div>
         <p class="inline-prompt">Have a standard we should meet? <a href="/book" data-track="cta-work-inline">Book a free consultation.</a></p>
       </div>
@@ -143,6 +142,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
           <button class="btn btn-secondary-dark btn-s" type="button" data-zoom-next aria-label="Next photo">→</button>
           <button class="btn btn-dark btn-s" type="button" data-close-zoom>Close</button>
         </div>
+        <p class="zoom-cta"><a href="/book" id="zoomBook" data-track="cta-zoom">Want one like this? Book a free consultation →</a></p>
       </div>
     </dialog>
 
@@ -158,7 +158,7 @@ terms = [
   ("Photos &amp; video", "The process may be filmed and photographed for the portfolio. Let us know before work starts if you prefer your vehicle not to appear."),
   ("Fleet projects", "Fleet work follows an approved layout per vehicle type. Scheduling, pricing per vehicle and payment terms are set out in a written agreement."),
 ]
-terms_html = "\n".join(f'          <li><h3>{t}</h3><p>{p}</p></li>' for t, p in terms)
+terms_html = "\n".join(f'          <li><h2>{t}</h2><p>{p}</p></li>' for t, p in terms)
 terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsTitle">
       <div class="wrap prose">
         <span class="eyebrow">Terms of service</span>
@@ -166,7 +166,7 @@ terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsT
         <p class="lead">Every project starts with a written quote. These are the main terms; the complete terms are included with each quote. Nothing is scheduled until the written quote is approved.</p>
       </div>
     </section>
-    <section class="section" style="padding-top:0" aria-label="Terms">
+    <section class="section flush-top" aria-label="Terms">
       <div class="wrap prose">
         <ol class="terms-list">
 {terms_html}
@@ -179,7 +179,7 @@ terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsT
         <span class="eyebrow">Privacy</span>
         <h2 id="privacyTitle">How we use your details.</h2>
         <p>We use the details you send us only to answer your request and prepare your quote. We don't sell or share them.</p>
-        <p>The consultation form on this website doesn't store anything: it opens your own WhatsApp or email app with your request ready to send. Messages then live in WhatsApp or email like any other conversation with us.</p>
+        <p>The consultation form on this website sends your request by email to our inbox; the website itself doesn't store it. If you choose WhatsApp instead, your request opens in your own WhatsApp app, ready to send. Messages then live in email or WhatsApp like any other conversation with us.</p>
         <p>This site uses cookie-free analytics to count visits. No advertising cookies are used.</p>
         <p>To ask us to delete your details, email <a href="mailto:hermeswraps@gmail.com">hermeswraps@gmail.com</a> or call <a href="tel:+18134751311">(813) 475-1311</a>.</p>
       </div>
@@ -189,7 +189,7 @@ terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsT
 
 nf_main = '''    <section class="section page-top" aria-labelledby="nfTitle">
       <div class="wrap prose">
-        <img class="logo-plate" src="/assets/logo.jpg" alt="Hermes Wraps — Vinyl Specialists logo" width="96" height="96" style="margin-bottom:24px">
+        <img class="logo-plate" src="/assets/logo.jpg" alt="Hermes Wraps — Vinyl Specialists logo" width="96" height="96">
         <span class="eyebrow">404 · Page not found</span>
         <h1 id="nfTitle">This page isn't here.</h1>
         <p class="lead muted">The link may be old or mistyped. Here's where to go next.</p>
