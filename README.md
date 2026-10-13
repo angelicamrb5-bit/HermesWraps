@@ -30,3 +30,15 @@ Los datos pendientes del cliente están marcados en el código como comentarios 
 - `work.html`, `terms.html` y `404.html` se generan: edita `scripts/pages.py` (proyectos, textos) y ejecuta `python3 scripts/build.py` (requiere Pillow).
 - El build también agrega `srcset` a las fotos (versión `-800.jpg` + 1600 px) y `?v=<hash>` a CSS/JS para que los navegadores no mezclen versiones.
 - Fotos nuevas: guárdalas en `public/assets/work/nombre.jpg` (1600 px) y `nombre-800.jpg` (800 px).
+
+## Formulario de consulta → correo (worker/)
+
+`book.html` envía cada solicitud a `POST /api/consult`. Ese endpoint es un Worker aparte (`worker/`), porque Pages Functions no puede enviar correos. Si el Worker no responde, el formulario abre WhatsApp (móvil) o el correo (escritorio) como antes, así que nada se rompe mientras no esté activo.
+
+Activación (una vez, en la cuenta Cloudflare de Hermes):
+
+1. **Email Routing** del dominio `hermeswraps.com` → activarlo y agregar `hermeswraps@gmail.com` como dirección de destino (llega un correo de verificación a Gmail: confirmarlo).
+2. **Workers & Pages → Create → Import a repository** → este repo, *Root directory* `worker`, comando de deploy `npx wrangler deploy`. Crea el Worker `hermeswraps-consult` con la ruta `hermeswraps.com/api/consult` y el binding `EMAIL`.
+3. Probar: enviar el formulario de `/book`; debe mostrar "Request sent." y llegar un correo de `website@hermeswraps.com` (responder al correo contesta directo al cliente).
+
+Para cambiar el destino: `worker/wrangler.jsonc` (`TO` y `allowed_destination_addresses`).

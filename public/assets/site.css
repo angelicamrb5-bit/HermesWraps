@@ -531,6 +531,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .field .error { display: flex; gap: var(--hw-space-2); align-items: flex-start; margin: var(--hw-space-2) 0 0; font-size: var(--hw-text-small); font-weight: 600; color: var(--hw-error); }
 .field .error svg { flex: none; width: 16px; height: 16px; margin-top: 2px; }
 .field [aria-invalid="true"] { border-color: var(--hw-error); border-width: 2px; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--hw-space-4); }
 @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
 fieldset.optional { margin: var(--hw-space-6) 0 var(--hw-space-5); padding: var(--hw-space-5) 0 0; border: 0; border-top: 1px solid var(--hw-border); }

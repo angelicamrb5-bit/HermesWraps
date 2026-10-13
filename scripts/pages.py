@@ -179,7 +179,7 @@ terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsT
         <span class="eyebrow">Privacy</span>
         <h2 id="privacyTitle">How we use your details.</h2>
         <p>We use the details you send us only to answer your request and prepare your quote. We don't sell or share them.</p>
-        <p>The consultation form on this website doesn't store anything: it opens your own WhatsApp or email app with your request ready to send. Messages then live in WhatsApp or email like any other conversation with us.</p>
+        <p>The consultation form on this website sends your request by email to our inbox; the website itself doesn't store it. If you choose WhatsApp instead, your request opens in your own WhatsApp app, ready to send. Messages then live in email or WhatsApp like any other conversation with us.</p>
         <p>This site uses cookie-free analytics to count visits. No advertising cookies are used.</p>
         <p>To ask us to delete your details, email <a href="mailto:hermeswraps@gmail.com">hermeswraps@gmail.com</a> or call <a href="tel:+18134751311">(813) 475-1311</a>.</p>
       </div>
