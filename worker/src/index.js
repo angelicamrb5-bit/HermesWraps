@@ -2,7 +2,7 @@
    POST /api/consult (JSON) → validates → emails the request to env.TO.
    book.js falls back to WhatsApp / email when this endpoint is unavailable. */
 
-const TYPES = { vehicle: 'Vehicle / fleet wraps', signs: 'Signs', commercial: 'Commercial graphics', vinyl: 'Other vinyl' };
+const TYPES = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl' };
 const LIMITS = { name: 120, company: 120, email: 200, type: 20, requirements: 4000, phone: 40, quantity: 60, timeline: 120 };
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -39,7 +39,7 @@ export default {
       v.quantity ? 'Quantity / fleet size: ' + v.quantity : null,
       v.timeline ? 'Timeline: ' + v.timeline : null,
       '',
-      'Requirements:',
+      'About the project:',
       v.requirements,
       '',
       'Reply to this email to answer ' + v.name + ' directly.'

@@ -5,7 +5,7 @@
   var cards = $$('#workGrid .project-card'), filters = $$('.filter');
   var types = document.getElementById('types'), catalog = document.getElementById('catalog');
   var title = document.getElementById('catalogTitle'), status = document.getElementById('filterStatus');
-  var LABELS = { commercial: 'Commercial & work vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl', vehicle: 'Personal vehicles' };
+  var LABELS = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl' };
 
   /* No type chosen: show one sample per type. A type chosen: show only its catalog. */
   function apply(cat, focus) {

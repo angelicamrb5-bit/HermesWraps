@@ -10,7 +10,7 @@
   var form = $('#consultForm'), done = $('#formDone'), alertBox = $('#formAlert');
   if (!form) return;
 
-  var TYPES = { vehicle: 'Vehicle / fleet wraps', signs: 'Signs', commercial: 'Commercial graphics', vinyl: 'Other vinyl' };
+  var TYPES = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl' };
   var fromUrl = new URLSearchParams(location.search).get('type');
   if (fromUrl && TYPES[fromUrl]) form.elements.type.value = fromUrl;
 
@@ -18,7 +18,7 @@
     name: 'Enter your name.',
     email: 'Enter an email address so we can send your consultation details.',
     type: 'Choose a project type.',
-    requirements: 'Tell us the standards this project must meet.'
+    requirements: 'Tell us about the project: the vehicle or space and what you want done.'
   };
   var ICON = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4.5v4M8 11h.01"/></svg>';
 
@@ -45,7 +45,7 @@
       'Name: ' + d.name,
       'Email: ' + d.email,
       'Project type: ' + TYPES[d.type],
-      'Requirements: ' + d.requirements
+      'About the project: ' + d.requirements
     ];
     if (d.company) lines.splice(3, 0, 'Company: ' + d.company);
     if (d.phone) lines.push('Phone: ' + d.phone);

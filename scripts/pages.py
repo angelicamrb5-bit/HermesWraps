@@ -57,10 +57,10 @@ for i, (cat, imgs, title, meta, line, alt) in enumerate(projects):
 
 
 TYPES = [
-  ("commercial", "Commercial &amp; work vehicles", "Vans, box trucks, tow trucks, dump trucks and fleet vehicles.", W+"box-truck-tire-shop-side-800.jpg", "Box truck with full printed graphics for a tire shop"),
+  ("commercial", "Business &amp; fleet vehicles", "Vans, box trucks, tow trucks, dump trucks and company cars.", W+"box-truck-tire-shop-side-800.jpg", "Box truck with full printed graphics for a tire shop"),
+  ("vehicle", "Personal vehicles", "Partial wraps, color changes, roofs, hoods and chrome delete.", "corvette-front.jpg", "White Corvette C8 with a gloss black roof and mirrors"),
   ("signs", "Signs &amp; storefronts", "Window and door graphics for storefronts.", W+"storefront-windows-pet-store-800.jpg", "Pet store storefront with full-color window graphics"),
   ("vinyl", "Other vinyl", "Display fridge and freezer wraps, decals and custom vinyl.", W+"display-fridge-desserts-2-800.jpg", "Display fridge wrapped with a dessert brand's graphics"),
-  ("vehicle", "Personal vehicles", "Partial wraps, color changes, roofs, hoods and chrome delete.", "corvette-front.jpg", "White Corvette C8 with a gloss black roof and mirrors"),
 ]
 def type_tiles(level='h3'):
     out = []
@@ -80,7 +80,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
       <div class="wrap">
         <span class="eyebrow">Selected work</span>
         <h1 id="workTitle">Work measured against our clients' standards.</h1>
-        <p class="lead">Real Hermes Wraps projects in Tampa Bay: fleet and work-vehicle graphics, storefronts, appliance wraps and personal vehicles. Choose a type of work to open its catalog.</p>
+        <p class="lead">Real Hermes Wraps projects in Tampa Bay: business and fleet vehicles, personal vehicles, storefronts and other vinyl. Choose a type of work to open its catalog.</p>
       </div>
     </section>
 
@@ -95,10 +95,10 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
         <a class="text-link" href="/work" data-type-reset><span class="arrow" aria-hidden="true">←</span> All types of work</a>
         <h2 id="catalogTitle" tabindex="-1">Catalog</h2>
         <ul class="filters" aria-label="Type of work">
-          <li><button class="filter" type="button" data-filter="commercial" aria-pressed="false">Commercial &amp; work vehicles</button></li>
+          <li><button class="filter" type="button" data-filter="commercial" aria-pressed="false">Business &amp; fleet vehicles</button></li>
+          <li><button class="filter" type="button" data-filter="vehicle" aria-pressed="false">Personal vehicles</button></li>
           <li><button class="filter" type="button" data-filter="signs" aria-pressed="false">Signs &amp; storefronts</button></li>
           <li><button class="filter" type="button" data-filter="vinyl" aria-pressed="false">Other vinyl</button></li>
-          <li><button class="filter" type="button" data-filter="vehicle" aria-pressed="false">Personal vehicles</button></li>
         </ul>
         <p class="sr-only" id="filterStatus" role="status" aria-live="polite"></p>
         <div class="card-grid" id="workGrid">
