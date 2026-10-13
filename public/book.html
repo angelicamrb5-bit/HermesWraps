@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css?v=a8ea6d39">
+  <link rel="stylesheet" href="/assets/site.css?v=98d4cbd3">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -45,9 +45,9 @@
           <p class="muted">Tell us what this project needs to meet. We'll review it before we talk.</p>
 
           <ol class="explainer">
-            <li><h3>Share your requirements.</h3><p>Vehicle or fleet, brand files, photos, timeline.</p></li>
-            <li><h3>We review your standards and scope.</h3><p>We point out anything, like paint condition, that could affect the result.</p></li>
-            <li><h3>You get a clear plan and quote.</h3><p>In writing.</p><!-- [CLIENT TO SUPPLY: response time] --></li>
+            <li><h2>Share your requirements.</h2><p>Vehicle or fleet, brand files, photos, timeline.</p></li>
+            <li><h2>We review your standards and scope.</h2><p>We point out anything, like paint condition, that could affect the result.</p></li>
+            <li><h2>You get a clear plan and quote.</h2><p>In writing.</p><!-- [CLIENT TO SUPPLY: response time] --></li>
           </ol>
 
           <ul class="check-list">
@@ -56,7 +56,7 @@
             <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>We review your specs before quoting</li>
           </ul>
 
-          <h2 class="h3" style="font-size:var(--hw-text-h3);font-style:normal;font-weight:600">Other ways to reach us</h2>
+          <h2 class="contact-title">Other ways to reach us</h2>
           <ul class="contact-list">
             <li><small>Phone</small><a href="tel:+18134751311" data-track="call-book">(813) 475-1311</a></li>
             <li><small>WhatsApp · +1 813 475 1311</small>
@@ -82,13 +82,12 @@
                 <p class="error" id="e-name" hidden></p>
               </div>
               <div class="field">
-                <label for="f-company">Company</label>
-                <input id="f-company" name="company" autocomplete="organization" required aria-describedby="e-company">
-                <p class="error" id="e-company" hidden></p>
+                <label for="f-company">Company <span class="req">(optional)</span></label>
+                <input id="f-company" name="company" autocomplete="organization">
               </div>
             </div>
             <div class="field">
-              <label for="f-email">Work email</label>
+              <label for="f-email">Email</label>
               <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
               <p class="error" id="e-email" hidden></p>
             </div>
@@ -126,7 +125,7 @@
                 <label for="f-time">Timeline</label>
                 <input id="f-time" name="timeline">
               </div>
-              <p class="hint" style="margin-top:0">Brand files and vehicle photos (PDF, AI, SVG, EPS, JPG, PNG, HEIC) can be attached in the WhatsApp chat or email that opens next.</p>
+              <p class="hint flush">Brand files and vehicle photos (PDF, AI, SVG, EPS, JPG, PNG, HEIC) can be attached in the WhatsApp chat or email that opens next.</p>
               <!-- File upload needs a server endpoint (decision D5). Add it here once the Worker sends requests to the business inbox. -->
             </fieldset>
 
@@ -141,13 +140,13 @@
           <div class="form-done" id="formDone" tabindex="-1" hidden>
             <h2>Almost done - press send.</h2>
             <p id="doneText">Your request is ready in WhatsApp. Press send there so it reaches us.</p>
-            <ol class="explainer" style="grid-template-columns:1fr">
+            <ol class="explainer stacked">
               <li><h3>We review your requirements.</h3><p>Your standards and scope come first.</p></li>
               <li><h3>We contact you.</h3><p>To go over details, photos and files.</p><!-- [CLIENT TO SUPPLY: response time] --></li>
               <li><h3>You get a clear plan and quote.</h3><p>In writing, before anything is scheduled.</p></li>
             </ol>
             <p class="muted">Didn't open? Call <a href="tel:+18134751311">(813) 475-1311</a>, message <a href="https://wa.me/18134751311" target="_blank" rel="noopener">WhatsApp</a> or email <a href="mailto:hermeswraps@gmail.com">hermeswraps@gmail.com</a>.</p>
-            <button class="alt-send" type="button" id="editAgain" style="background:none;border:0;padding:0;min-height:44px;font:600 1rem var(--hw-font-body);color:var(--hw-link);text-decoration:underline;cursor:pointer">Edit my request</button>
+            <button class="alt-send" type="button" id="editAgain">Edit my request</button>
           </div>
         </div>
       </div>
@@ -178,7 +177,7 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <div class="footer-bottom" style="margin-top:0">
+      <div class="footer-bottom flush-top">
         <span>© <span data-year>2026</span> Hermes Wraps · Tampa Bay &amp; surrounding communities</span>
         <ul>
           <li><a href="/">Home</a></li>
@@ -190,7 +189,7 @@
     </div>
   </footer>
 
-  <script src="/assets/site.js?v=ac3c846e" defer></script>
-  <script src="/assets/book.js?v=b357e162" defer></script>
+  <script src="/assets/site.js?v=48fe81cc" defer></script>
+  <script src="/assets/book.js?v=a11ea0ff" defer></script>
 </body>
 </html>

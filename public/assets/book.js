@@ -15,8 +15,7 @@
 
   var ERRORS = {
     name: 'Enter your name.',
-    company: 'Enter your company name.',
-    email: 'Enter a work email so we can send your consultation details.',
+    email: 'Enter an email address so we can send your consultation details.',
     type: 'Choose a project type.',
     requirements: 'Tell us the standards this project must meet.'
   };
@@ -43,11 +42,11 @@
       'Free consultation request — Hermes Wraps',
       '',
       'Name: ' + d.name,
-      'Company: ' + d.company,
-      'Work email: ' + d.email,
+      'Email: ' + d.email,
       'Project type: ' + TYPES[d.type],
       'Requirements: ' + d.requirements
     ];
+    if (d.company) lines.splice(3, 0, 'Company: ' + d.company);
     if (d.phone) lines.push('Phone: ' + d.phone);
     if (d.quantity) lines.push('Quantity / fleet size: ' + d.quantity);
     if (d.timeline) lines.push('Timeline: ' + d.timeline);

@@ -84,13 +84,13 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
       </div>
     </section>
 
-    <section class="section" style="padding-top:0" id="types" aria-label="Types of work">
+    <section class="section flush-top" id="types" aria-label="Types of work">
       <div class="wrap">
         {type_tiles('h2')}
       </div>
     </section>
 
-    <section class="section" style="padding-top:0" id="catalog" aria-labelledby="catalogTitle" hidden>
+    <section class="section flush-top" id="catalog" aria-labelledby="catalogTitle" hidden>
       <div class="wrap">
         <a class="text-link" href="/work" data-type-reset><span class="arrow" aria-hidden="true">←</span> All types of work</a>
         <h2 id="catalogTitle" tabindex="-1">Catalog</h2>
@@ -158,7 +158,7 @@ terms = [
   ("Photos &amp; video", "The process may be filmed and photographed for the portfolio. Let us know before work starts if you prefer your vehicle not to appear."),
   ("Fleet projects", "Fleet work follows an approved layout per vehicle type. Scheduling, pricing per vehicle and payment terms are set out in a written agreement."),
 ]
-terms_html = "\n".join(f'          <li><h3>{t}</h3><p>{p}</p></li>' for t, p in terms)
+terms_html = "\n".join(f'          <li><h2>{t}</h2><p>{p}</p></li>' for t, p in terms)
 terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsTitle">
       <div class="wrap prose">
         <span class="eyebrow">Terms of service</span>
@@ -166,7 +166,7 @@ terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsT
         <p class="lead">Every project starts with a written quote. These are the main terms; the complete terms are included with each quote. Nothing is scheduled until the written quote is approved.</p>
       </div>
     </section>
-    <section class="section" style="padding-top:0" aria-label="Terms">
+    <section class="section flush-top" aria-label="Terms">
       <div class="wrap prose">
         <ol class="terms-list">
 {terms_html}
@@ -189,7 +189,7 @@ terms_main = f'''    <section class="page-hero page-top" aria-labelledby="termsT
 
 nf_main = '''    <section class="section page-top" aria-labelledby="nfTitle">
       <div class="wrap prose">
-        <img class="logo-plate" src="/assets/logo.jpg" alt="Hermes Wraps — Vinyl Specialists logo" width="96" height="96" style="margin-bottom:24px">
+        <img class="logo-plate" src="/assets/logo.jpg" alt="Hermes Wraps — Vinyl Specialists logo" width="96" height="96">
         <span class="eyebrow">404 · Page not found</span>
         <h1 id="nfTitle">This page isn't here.</h1>
         <p class="lead muted">The link may be old or mistyped. Here's where to go next.</p>
