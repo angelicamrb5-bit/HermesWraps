@@ -1,0 +1,97 @@
+{
+  "client_name": "Hermes Wraps",
+  "site_url": "hermeswraps.com (currently on a temporary address)",
+  "report_title": "Website Audit: Findings & Recommendations",
+  "subtitle": "A practical plan to turn more visitors into quote requests",
+  "date": "October 2026",
+  "brand_color": "691C2A",
+
+  "executive_summary": {
+    "overview": [
+      "Hermes Wraps already has a website that looks premium and tells a clear, credible story: one accountable specialist, premium 3M vinyl, written terms, and real videos of the work being done.",
+      "The main thing holding it back is how hard it is for a ready-to-buy visitor to act. On a phone there is no always-visible way to call or message, the quote form can lose people at the final step, and the site doesn't yet show reviews, prices or the person behind the work. The site also still lives on a temporary web address, which limits how well it can be found and shared. Most of the important fixes are quick and inexpensive, with a few larger content projects to follow."
+    ],
+    "at_a_glance": [
+      {"value": "~20", "label": "Screens of scrolling on a phone before reaching the quote form"},
+      {"value": "0", "label": "Customer reviews or testimonials shown on the site"},
+      {"value": "1", "label": "Page covering all six services, which limits search visibility"}
+    ],
+    "key_takeaways": [
+      "The site looks the part and the process videos are a real advantage over typical local installers.",
+      "The biggest gains will come from making it effortless to call, message or request a quote, especially on a phone.",
+      "Six of the ten recommendations are quick wins that can be completed within 30 days."
+    ]
+  },
+
+  "whats_working": [
+    {"title": "A premium, consistent look", "detail": "The dark wine and gold design, bold headlines and high-quality photos make the business feel established and professional. It supports charging for quality work, and our recommendations build on this design rather than replacing it."},
+    {"title": "Proof of the process, on video", "detail": "Few local installers let customers watch the preparation, placement and trimming before they book. These videos are a genuine differentiator and directly support the promise of quality."},
+    {"title": "Clear, honest terms", "detail": "The written-quote approach, deposit rules, vehicle-condition notes and care instructions set expectations early. This reduces disputes later and signals a business that stands behind its work."},
+    {"title": "A message that's ready to send", "detail": "The quote form turns the customer's answers into a ready-to-read email or WhatsApp message, and the phone number can be tapped to call. It's a simple, low-cost setup that already removes some effort for customers."},
+    {"title": "A solid, lightweight foundation", "detail": "The site is simply built, uses clear descriptions for its photos and avoids heavy add-ons. That keeps it fast to update and inexpensive to improve."}
+  ],
+
+  "opportunities": [
+    {
+      "title": "The site isn't on its own web address yet",
+      "impact": "High",
+      "finding": "The site currently runs on a long, temporary address. Behind the scenes it already tells Google and social networks that its real home is hermeswraps.com, but that address isn't connected yet, so it doesn't open. The contact email is also a Gmail address.",
+      "why_it_matters": "Until the domain is live, Google is likely to be confused about which address to show, and links shared on WhatsApp or Facebook may appear without a preview image. A random-looking address can also make a careful customer, especially a business client, hesitate to get in touch."
+    },
+    {
+      "title": "Getting in touch takes too much effort on a phone",
+      "impact": "High",
+      "finding": "On a phone the page is about 20 screens long and the quote form is near the very end. The 'Request a quote' button is hidden inside the menu, the header disappears as you scroll, and there's no button to message on WhatsApp directly. In the opening section, the most prominent button leads to the videos rather than to a quote.",
+      "why_it_matters": "Most people looking for a wrap are likely browsing on their phones, often from social media, and want to act the moment they're convinced. If the next step isn't one tap away, some of them will simply leave or forget to come back."
+    },
+    {
+      "title": "The quote form can lose enquiries at the final step",
+      "impact": "High",
+      "finding": "The FAQ asks customers to send photos of their vehicle, but the form has no way to include them and doesn't explain how to add them afterwards. The 'Send by email' button relies on an email app being set up on the device; if it isn't, nothing happens and the visitor isn't told what to do instead. Two questions also come pre-filled with business and fleet answers, so personal-vehicle requests can arrive mislabelled.",
+      "why_it_matters": "These are people who have already decided to ask for a price. Losing them here is the most expensive kind of lost lead, and quotes that arrive without photos or with the wrong details take longer to answer."
+    },
+    {
+      "title": "Visitors don't get enough reassurance to decide",
+      "impact": "High",
+      "finding": "There are no customer reviews, no price guidance, and no name or photo of the owner, even though the site's main promise is 'quality with a name behind it'. There's no location or opening hours, the warranty period isn't stated, and the strong focus on fleet work isn't yet backed by a fleet example. Signs are offered but none are shown.",
+      "why_it_matters": "A wrap is a significant purchase that involves someone's car, so people look for proof from other customers and a rough idea of cost before they reach out. Without it, some visitors will choose a competitor who shows reviews and prices, and others will send enquiries that don't fit their budget."
+    },
+    {
+      "title": "It's hard to be found for specific services and in Spanish",
+      "impact": "Medium",
+      "finding": "All six services share a single page with one short line each, and the main headline doesn't mention vehicle wraps or Tampa Bay. Spanish speakers are invited to write in Spanish, but the invitation appears near the bottom of the page and the form itself is only in English.",
+      "why_it_matters": "People search for specific things like 'chrome delete in Tampa' or 'fleet graphics near me'. Without a dedicated page for each service, the site has little chance of appearing for those searches, and Spanish-speaking customers may not feel fully welcome."
+    },
+    {
+      "title": "Some visitors are left out or slowed down",
+      "impact": "Medium",
+      "finding": "The small gold section labels are hard to read on the light backgrounds. The project gallery and the opening video move on their own with no pause button, and keyboard users don't always get a clear highlight of where they are. The opening video also starts downloading straight away, including on mobile data. We weren't able to measure loading speed directly in this review.",
+      "why_it_matters": "Making the site easy for everyone to use is good service and reduces accessibility compliance risk for a US business. A lighter opening section also helps visitors on slower connections see your work before they lose patience."
+    }
+  ],
+
+  "recommendations": [
+    {"action": "Connect hermeswraps.com and move the site onto it", "detail": "Point the domain to the current site, make it the only address in use, and set up a matching business email that forwards to your inbox. At the same time, give Google a map of the site and add a friendly 'page not found' screen.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Add one-tap Call, WhatsApp and Quote buttons on phones", "detail": "Keep a small bar at the bottom of the screen on phones, and make 'Request a quote' the main button in the opening section. Visitors can then act the moment they're ready, wherever they are on the page.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Make the quote form more reliable", "detail": "Tell customers to attach photos once WhatsApp or email opens, show a clear fallback if the email app doesn't open, and replace the pre-filled answers with 'Choose one'. We expect fewer lost requests and quotes that are faster to answer.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Start collecting customer reviews", "detail": "Set up or claim your Google Business Profile and send every finished customer a direct link to leave a review. Once a handful are in, feature them on the site next to the quote form.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Start measuring calls, messages and quote requests", "detail": "Add simple, privacy-friendly tracking so you can see how many people tap to call, open WhatsApp or use the form, and where they came from. This shows which changes are working and where to invest next.", "impact": "Medium", "effort": "Low", "timing": "Quick win"},
+    {"action": "Make the site easier for everyone to read and use", "detail": "Darken the gold labels on light backgrounds, add pause buttons to the moving gallery and opening video, and make the keyboard highlight clearly visible.", "impact": "Medium", "effort": "Low", "timing": "Quick win"},
+    {"action": "Answer the big questions on the page", "detail": "Introduce the owner with a name, a photo and a short story. Add a general location and hours, starting prices or typical price ranges, the standard warranty period, and the film you install. Add a few FAQs on timing and price, and check the project descriptions that contradict each other, such as the Silverado hood.", "impact": "High", "effort": "Low", "timing": "Next"},
+    {"action": "Show more of the work, starting with business clients", "detail": "Turn a commercial job into a short case study, with the client's permission, and add photos of signs, chrome delete and wrap removal so every service has visible proof. If larger fleet work is still the goal rather than the norm, adjust the wording to match.", "impact": "Medium", "effort": "Medium", "timing": "Next"},
+    {"action": "Lighten the site for mobile visitors", "detail": "Use a shorter, lighter opening video, or a strong photo of a finished car, and serve smaller versions of photos to phones. Then measure real loading times to confirm the improvement.", "impact": "Medium", "effort": "Medium", "timing": "Next"},
+    {"action": "Create a page for each service, plus a Spanish page", "detail": "Give fleet graphics, color changes, partial wraps and chrome delete, wrap removal and signs their own pages, each with its own photos, answers and quote button, and add a Spanish version of the key content. This is the foundation for being found by people who don't know your name yet.", "impact": "High", "effort": "High", "timing": "Later"}
+  ],
+
+  "next_steps": {
+    "intro": "To get started, we suggest the following over the next two weeks:",
+    "steps": [
+      {"title": "Approve the quick-win package", "detail": "Give the go-ahead on recommendations 1 to 6 so work can start right away. Most of them can be completed within the first two weeks.", "timing": "This week"},
+      {"title": "Share access", "detail": "We'll need access to the domain registrar for hermeswraps.com, the hosting account that runs the site, and your Google Business Profile if one exists.", "timing": "This week"},
+      {"title": "Confirm a few business details", "detail": "Let us know whether you work from a shop, travel to customers or both, your hours, your standard warranty, the film you usually install, and any price ranges you're comfortable publishing.", "timing": "Next week"},
+      {"title": "Gather photos and permissions", "detail": "Send a photo of yourself at work, any photos of signs or fleet jobs, and confirm which business clients are happy to be featured.", "timing": "Within two weeks"},
+      {"title": "Book a short planning call", "detail": "We'll walk through this report together and agree on the scope and timing of the larger projects.", "timing": "Within two weeks"}
+    ],
+    "closing": "The quality of your work already comes through on the site. These changes will make it easier for the right customers to act on it. We look forward to talking through the plan with you."
+  }
+}
