@@ -103,6 +103,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
         <p class="sr-only" id="filterStatus" role="status" aria-live="polite"></p>
         <div class="card-grid" id="workGrid">
 {chr(10).join(cards)}
+          <p class="inline-prompt" id="midPrompt">Want one like this? <a href="/book" data-track="cta-work-mid">Book a free consultation.</a></p>
         </div>
         <p class="inline-prompt">Have a standard we should meet? <a href="/book" data-track="cta-work-inline">Book a free consultation.</a></p>
       </div>
@@ -143,6 +144,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
           <button class="btn btn-secondary-dark btn-s" type="button" data-zoom-next aria-label="Next photo">→</button>
           <button class="btn btn-dark btn-s" type="button" data-close-zoom>Close</button>
         </div>
+        <p class="zoom-cta"><a href="/book" id="zoomBook" data-track="cta-zoom">Want one like this? Book a free consultation →</a></p>
       </div>
     </dialog>
 

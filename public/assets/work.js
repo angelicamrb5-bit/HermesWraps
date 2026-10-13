@@ -14,7 +14,9 @@
       return;
     }
     var n = 0;
-    cards.forEach(function (c) { var on = c.getAttribute('data-cat') === cat; c.hidden = !on; if (on) n++; });
+    var mid = document.getElementById('midPrompt');
+    cards.forEach(function (c) { var on = c.getAttribute('data-cat') === cat; c.hidden = !on; if (on) { n++; if (n === 6 && mid) c.after(mid); } });
+    if (mid) { mid.hidden = n <= 6; mid.querySelector('a').href = '/book?type=' + cat; }
     filters.forEach(function (f) { f.setAttribute('aria-pressed', String(f.getAttribute('data-filter') === cat)); });
     types.hidden = true; catalog.hidden = false;
     title.textContent = LABELS[cat] + ' · ' + n + (n === 1 ? ' project' : ' projects');
@@ -59,6 +61,7 @@
       list = b.getAttribute('data-zoom').split(',');
       alt = card.querySelector('.media img').alt;
       cap.textContent = b.textContent + ' — ' + card.querySelector('p:last-of-type').textContent;
+      var bk = document.getElementById('zoomBook'); if (bk) bk.href = '/book?type=' + card.getAttribute('data-cat');
       show(0);
       dlg.showModal();
     });
