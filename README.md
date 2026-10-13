@@ -9,7 +9,7 @@ Sitio estático de **hermeswraps.com**. Todo lo que se publica está en `public/
 - `public/404.html` — Página no encontrada
 - `docs/website-solutions.md` — Documento de soluciones, sección por sección, que guía los cambios
 
-El original de Muse está guardado sin cambios en el primer commit y en el tag `original-muse-v4`.
+El original de Muse está guardado sin cambios en el commit `144b4e9` ("Add original Hermes Wraps site…").
 
 ## Publicar en Cloudflare (cuenta de Hermes)
 
