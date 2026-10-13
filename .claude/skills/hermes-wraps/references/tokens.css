@@ -1,0 +1,148 @@
+/* Hermes Wraps design tokens
+   Color values: Brand Color Guide v1.0 (assets/brand/hermes-wraps-color-guide-v1.0.pdf).
+   Components must reference ROLE tokens (--hw-bg, --hw-text, --hw-btn-*...),
+   never palette tokens or raw hex, so the palette can change in one place. */
+
+/* Fonts: Barlow, Barlow Semi Condensed, IBM Plex Mono (Google Fonts)
+   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"> */
+
+:root {
+  /* ---- Core palette ---- */
+  --hw-burgundy: #460714;
+  --hw-gold: #C9A477;
+  --hw-midnight: #1A0307;
+  --hw-carbon: #0A0A0A;
+  --hw-ivory: #F7F4EC;
+
+  /* ---- Supporting tones ---- */
+  --hw-gold-highlight: #EDCA9D;
+  --hw-gold-shadow: #A27B55;
+  --hw-ring-gold: #F4D394;
+  --hw-burgundy-lift: #5B1B26;
+  --hw-copper: #C7755E;        /* decorative lines only */
+
+  /* ---- Web-only additions ---- */
+  --hw-gold-text: #7D5C38;     /* only gold allowed as text on light */
+  --hw-stone: #ECE6DC;
+  --hw-warm-gray: #6B5F57;
+
+  /* ---- Tints & shades (backgrounds, borders, states only) ---- */
+  --hw-burgundy-50: #ECE6E8;
+  --hw-burgundy-100: #D1C1C4;
+  --hw-burgundy-300: #A2838A;
+  --hw-burgundy-400: #74454F;
+  --hw-burgundy-500: #460714;
+  --hw-burgundy-700: #31050E;
+  --hw-burgundy-900: #1C0308;
+  --hw-gold-50: #FAF6F1;
+  --hw-gold-100: #F2E8DD;
+  --hw-gold-200: #E4D2BB;
+  --hw-gold-300: #D6BB99;
+  --hw-gold-500: #C9A477;
+  --hw-gold-700: #8D7353;
+  --hw-gold-900: #504230;
+
+  /* ---- Color roles (from the guide) ---- */
+  --hw-bg: var(--hw-ivory);
+  --hw-bg-alt: var(--hw-stone);
+  --hw-bg-dark: var(--hw-midnight);
+  --hw-surface-brand: var(--hw-burgundy);
+  --hw-text: var(--hw-carbon);
+  --hw-text-muted: var(--hw-warm-gray);
+  --hw-text-on-dark: var(--hw-ivory);
+  --hw-heading: var(--hw-burgundy);
+  --hw-link: var(--hw-burgundy);
+  --hw-link-on-dark: var(--hw-gold-highlight);
+  --hw-accent: var(--hw-gold);
+  --hw-accent-text: var(--hw-gold-text);
+  --hw-btn-primary-bg: var(--hw-burgundy);
+  --hw-btn-primary-bg-hover: var(--hw-burgundy-lift);
+  --hw-btn-primary-text: var(--hw-ivory);
+  --hw-btn-dark-bg: var(--hw-gold);
+  --hw-btn-dark-bg-hover: var(--hw-gold-highlight);
+  --hw-btn-dark-text: var(--hw-carbon);
+  --hw-focus: var(--hw-ring-gold);
+
+  /* ---- Additional roles (skill-defined, built from the palette) ---- */
+  --hw-border: var(--hw-burgundy-100);          /* hairlines on ivory */
+  --hw-border-subtle: var(--hw-stone);
+  --hw-border-on-dark: rgba(237, 202, 157, 0.24); /* gold-highlight @24% */
+  --hw-eyebrow: var(--hw-gold-text);
+  --hw-eyebrow-on-dark: var(--hw-gold-highlight);
+  --hw-overlay: rgba(26, 3, 7, 0.72);           /* midnight overlay for text on photos */
+  --hw-error: var(--hw-burgundy);               /* no new hues: errors use burgundy + icon + text */
+  --hw-success: var(--hw-carbon);               /* success uses carbon + check icon */
+
+  /* ---- Typography ---- */
+  --hw-font-display: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+  --hw-font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+  --hw-font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* fluid sizes: mobile → desktop */
+  --hw-text-display: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);   /* 40 → 72 */
+  --hw-text-h1: clamp(2.25rem, 1.7rem + 2.2vw, 3.5rem);       /* 36 → 56 */
+  --hw-text-h2: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);       /* 28 → 40 */
+  --hw-text-h3: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);      /* 20 → 24 */
+  --hw-text-h4: 1.125rem;                                     /* 18 */
+  --hw-text-lead: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);/* 18 → 21 */
+  --hw-text-body: 1.0625rem;                                  /* 17 */
+  --hw-text-small: 0.875rem;                                  /* 14 */
+  --hw-text-eyebrow: 0.8125rem;                               /* 13 */
+  --hw-text-stat: clamp(3rem, 2.2rem + 3.2vw, 5rem);          /* 48 → 80 */
+
+  --hw-leading-tight: 1.05;
+  --hw-leading-heading: 1.15;
+  --hw-leading-body: 1.6;
+  --hw-tracking-eyebrow: 0.08em;
+  --hw-tracking-display: -0.01em;
+  --hw-measure: 68ch;
+
+  /* ---- Spacing (8px base) ---- */
+  --hw-space-1: 4px;
+  --hw-space-2: 8px;
+  --hw-space-3: 12px;
+  --hw-space-4: 16px;
+  --hw-space-5: 24px;
+  --hw-space-6: 32px;
+  --hw-space-7: 48px;
+  --hw-space-8: 64px;
+  --hw-space-9: 96px;
+  --hw-space-10: 128px;
+  --hw-section-y: clamp(64px, 8vw, 96px);
+  --hw-gutter: clamp(16px, 4vw, 24px);
+  --hw-container: 1200px;
+  --hw-container-wide: 1280px;
+
+  /* ---- Shape ---- */
+  --hw-radius-pill: 999px;   /* buttons, chips */
+  --hw-radius-card: 12px;
+  --hw-radius-input: 8px;
+  --hw-radius-media: 8px;
+  --hw-hairline: 1px;
+  --hw-skew: -12deg;         /* tagline-bar motif angle */
+  --hw-shadow-card: 0 1px 2px rgba(26, 3, 7, 0.06);
+  --hw-shadow-raised: 0 8px 24px rgba(26, 3, 7, 0.10);
+
+  /* ---- Motion ---- */
+  --hw-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --hw-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --hw-dur-fast: 150ms;
+  --hw-dur-base: 240ms;
+  --hw-dur-reveal: 520ms;
+  --hw-rise: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --hw-dur-fast: 0ms;
+    --hw-dur-base: 0ms;
+    --hw-dur-reveal: 0ms;
+    --hw-rise: 0px;
+  }
+}
+
+/* Focus: visible on every interactive element */
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--hw-focus);
+  outline-offset: 2px;
+}
