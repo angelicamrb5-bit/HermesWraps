@@ -161,7 +161,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 
 .eyebrow {
   display: block; margin: 0 0 var(--hw-space-3);
-  font: 500 var(--hw-text-eyebrow)/1.4 var(--hw-font-mono);
+  font: 600 var(--hw-text-eyebrow)/1.2 var(--hw-font-body);
   letter-spacing: var(--hw-tracking-eyebrow); text-transform: uppercase; color: var(--hw-eyebrow);
   white-space: pre-wrap;
 }
@@ -283,7 +283,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 
 /* ---------- Proof strip ---------- */
 .proof-strip { border-bottom: 1px solid var(--hw-border); }
-.proof-strip ul { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; padding: 0; list-style: none; }
+.proof-strip ul { display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; padding: 0; list-style: none; }
 .proof-strip li { padding: var(--hw-space-6) var(--hw-space-5); border-left: 1px solid var(--hw-border); }
 .proof-strip li:first-child { border-left: 0; padding-left: 0; }
 .stat { display: block; font: 700 clamp(2rem, 1.6rem + 1.6vw, 3rem)/1 var(--hw-font-display); color: var(--hw-heading); font-variant-numeric: tabular-nums; margin-bottom: var(--hw-space-2); }
@@ -292,7 +292,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
   .proof-strip ul { grid-template-columns: 1fr 1fr; }
   .proof-strip li { padding: var(--hw-space-5) var(--hw-space-4); }
   .proof-strip li:nth-child(odd) { border-left: 0; padding-left: 0; }
-  .proof-strip li:nth-child(n+3) { border-top: 1px solid var(--hw-border); }
+  .proof-strip li:nth-child(3) { grid-column: 1 / -1; border-top: 1px solid var(--hw-border); }
 }
 
 /* ---------- Project cards ---------- */
@@ -303,7 +303,6 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .project-card .media { position: relative; overflow: hidden; border-radius: var(--hw-radius-media); aspect-ratio: 4 / 3; background: var(--hw-bg-alt); }
 .project-card .media img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform var(--hw-dur-base) var(--hw-ease); }
 .project-card:hover .media img { transform: scale(1.02); }
-.project-card .badge { position: absolute; top: var(--hw-space-3); left: var(--hw-space-3); z-index: 1; margin: 0; color: var(--hw-text-on-dark); }
 .project-card h3 { margin: var(--hw-space-4) 0 var(--hw-space-2); }
 .project-card h3 a, .project-card h3 button { color: inherit; text-decoration: none; font: inherit; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; }
 .project-card h3 a::after, .project-card h3 button::after { content: ""; position: absolute; inset: 0; }
@@ -398,7 +397,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .stat-arc svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .stat-arc .stat-num { font: 700 var(--hw-text-stat)/1 var(--hw-font-display); color: var(--hw-accent); font-variant-numeric: tabular-nums; }
 .stat-arc .stat-cap { position: absolute; bottom: 22%; font-size: var(--hw-text-small); color: var(--hw-text-on-dark-muted); text-align: center; width: 60%; }
-.story p { color: var(--hw-text-on-dark-muted); max-width: var(--hw-measure); }
+.story p { color: var(--hw-text-on-dark-muted); max-width: 60ch; }
 .story .eyebrow { color: var(--hw-eyebrow-on-dark); }
 
 /* ---------- Consultation explainer ---------- */
@@ -445,7 +444,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-grid > :first-child { grid-column: 1 / -1; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
 .footer-grid .logo-plate { width: 72px; height: 72px; box-shadow: 0 0 0 1px var(--hw-border-on-dark); margin-bottom: var(--hw-space-4); }
-.footer-grid h2 { font: 500 var(--hw-text-eyebrow)/1.4 var(--hw-font-mono); font-style: normal; letter-spacing: var(--hw-tracking-eyebrow); text-transform: uppercase; color: var(--hw-eyebrow-on-dark); margin-bottom: var(--hw-space-4); }
+.footer-grid h2 { font: 600 var(--hw-text-eyebrow)/1.2 var(--hw-font-body); font-style: normal; letter-spacing: var(--hw-tracking-eyebrow); text-transform: uppercase; color: var(--hw-eyebrow-on-dark); margin-bottom: var(--hw-space-4); }
 .footer-grid ul { margin: 0; padding: 0; list-style: none; }
 .footer-grid li { margin-bottom: var(--hw-space-1); }
 .site-footer a { color: var(--hw-text-on-dark); text-decoration: none; display: inline-block; padding: 8px 0; }
@@ -484,7 +483,8 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
   .filters li { flex: none; }
   .filter { white-space: nowrap; }
 }
-.zoom-cta { flex-basis: 100%; margin: 0; font-size: var(--hw-text-small); }
+.zoom .zoom-bar .zoom-cta { flex: 1 1 100%; margin: 0; font-size: var(--hw-text-small); }
+.zoom a { color: var(--hw-link-on-dark); }
 .zoom-cta a { display: inline-block; padding: 8px 0; font-weight: 600; }
 .filter[aria-pressed="true"] { background: var(--hw-btn-primary-bg); border-color: var(--hw-btn-primary-bg); color: var(--hw-btn-primary-text); }
 .inline-prompt { grid-column: 1 / -1; padding: var(--hw-space-5) 0; border-block: 1px solid var(--hw-border); font-size: var(--hw-text-lead); }
@@ -554,7 +554,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--hw-space-4); }
 @media (max-width: 560px) { .field-row { grid-template-columns: 1fr; } }
 fieldset.optional { margin: var(--hw-space-6) 0 var(--hw-space-5); padding: var(--hw-space-5) 0 0; border: 0; border-top: 1px solid var(--hw-border); }
-fieldset.optional legend { padding: 0 var(--hw-space-2) 0 0; font: 500 var(--hw-text-eyebrow)/1.4 var(--hw-font-mono); letter-spacing: var(--hw-tracking-eyebrow); text-transform: uppercase; color: var(--hw-eyebrow); }
+fieldset.optional legend { padding: 0 var(--hw-space-2) 0 0; font: 600 var(--hw-text-eyebrow)/1.2 var(--hw-font-body); letter-spacing: var(--hw-tracking-eyebrow); text-transform: uppercase; color: var(--hw-eyebrow); }
 .form-actions { display: grid; gap: var(--hw-space-3); justify-items: start; }
 @media (max-width: 560px) { .form-actions .btn-primary { width: 100%; } }
 .alt-send { background: none; border: 0; padding: 0; min-height: 44px; font: 600 1rem/1 var(--hw-font-body); color: var(--hw-link); cursor: pointer; text-decoration: underline; text-underline-offset: 4px; }

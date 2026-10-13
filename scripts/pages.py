@@ -36,7 +36,6 @@ projects = [
   ("vehicle", ["silverado-hood-angle", "silverado-hood-close"], "Chevrolet Silverado | hood wrap", "HOOD WRAP · 1 VEHICLE", "Hood wrap, with a close view of the edges.", "Chevrolet Silverado with a wrapped hood"),
   ("vehicle", ["bmw-x1-hood-front", "bmw-x1-hood-roof-close"], "BMW X1 | gloss black hood & roof", "PARTIAL WRAP · 1 VEHICLE", "Gloss black hood and roof.", "BMW X1 with a gloss black hood and roof"),
 ]
-badge = {"commercial": "Commercial", "vehicle": "Vehicle", "signs": "Signs", "vinyl": "Vinyl"}
 from PIL import Image
 ROOT = os.path.join(PUBLIC, 'assets') + '/'
 def thumb(p): return p + ('-800' if p.startswith(W) else '') + '.jpg'
@@ -49,7 +48,6 @@ for i, (cat, imgs, title, meta, line, alt) in enumerate(projects):
     count = f' <span class="count">· {len(imgs)} photos</span>' if len(imgs) > 1 else ''
     cards.append(f'''          <article class="project-card" data-cat="{cat}">
             <div class="media"><img src="/assets/{thumb(imgs[0])}" alt="{alt}" width="{w}" height="{h}" loading="lazy" decoding="async"></div>
-            <p class="tagline-bar badge"><span>{badge[cat]}</span></p>
             <h3><button type="button" data-zoom="{full}" aria-haspopup="dialog">{t}</button></h3>
             <span class="meta mono">{meta}{count}</span>
             <p>{line}</p>
