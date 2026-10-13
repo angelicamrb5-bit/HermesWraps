@@ -11,7 +11,7 @@ Invoke after each completed web design section. Arguments (optional): a section 
 
 ## 1. Load the source of truth (every time, never from memory)
 
-1. Find the hermes-wraps skill: the sibling folder `../hermes-wraps/` next to this skill, or the installed `hermes-wraps` skill (invoke it if it isn't loaded). If it can't be found, stop and tell the user; don't review from memory.
+1. Find the hermes-wraps skill: the sibling folder `../hermes-wraps/` next to this skill, or the installed `hermes-wraps` skill (invoke it if it isn't loaded). List its directory: its `references/` files are part of the skill. If it can't be found, stop and tell the user; don't review from memory. Never report the reference files as missing without having listed the folder. If there's no file access in this environment, say so and review against hermes-wraps SKILL.md alone, marking the scanner and reference checks "not verified".
 2. Read `hermes-wraps/SKILL.md` in full, plus:
    - `references/tokens.css` (always)
    - `references/components.md` for each component in the section

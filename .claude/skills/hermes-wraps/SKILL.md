@@ -7,6 +7,17 @@ description: Internal design instruction set for the client Hermes Wraps (vinyl 
 
 This is how Claude designs for Hermes Wraps. It turns the client's audience, message, conversion goal and brand color guide into decisions. Read this file in full before any design work. Open the files under `references/` when the task needs that level of detail (they are listed at the end).
 
+**This skill is a folder, not just this file.** The directory this SKILL.md was loaded from also contains:
+
+```
+references/brand-foundations.md   references/tokens.css        references/visual-system.md
+references/components.md          references/page-blueprints.md references/voice-and-copy.md
+inspiration/README.md (+ client screenshots)                    assets/brand/ (color guide PDF, logo, business card)
+```
+
+- Read them with your file tools from the skill's own directory (for example `<skill-dir>/references/tokens.css`). If you're unsure of the path, list the skill directory first.
+- Never tell the user these files are missing unless you actually listed the skill directory and they weren't there. If this environment has no file access (for example, code execution is turned off in Claude.ai), say exactly that: "I can only read SKILL.md here because file access is off." Then continue: this file contains every non-negotiable rule.
+
 ## 0. The brief in one breath
 
 - **Who we design for:** design system designers, design leaders and their teams at medium-to-large enterprises in the wraps and signage business. They own brand standards and hand work to production partners. They judge a partner by how faithfully it executes *their* system.
