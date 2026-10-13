@@ -55,6 +55,7 @@
     return lines.join('\n');
   }
 
+  var lastText = '';
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var mode = (e.submitter && e.submitter.getAttribute('data-send')) || 'whatsapp';
@@ -70,6 +71,7 @@
     var d = {};
     Array.prototype.forEach.call(form.elements, function (el) { if (el.name) d[el.name] = el.value.trim(); });
     var text = message(d);
+    lastText = text;
 
     if (mode === 'email') {
       location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Free consultation request — ' + (d.company || d.name)) + '&body=' + encodeURIComponent(text);
@@ -85,7 +87,22 @@
     done.focus();
   });
 
+  /* Backup when WhatsApp or the email app doesn't open: copy the request */
+  var copyBtn = $('#copyRequest'), copyStatus = $('#copyStatus');
+  if (copyBtn) copyBtn.addEventListener('click', function () {
+    var ok = function () { copyStatus.textContent = 'Copied. Paste it into WhatsApp or an email to hermeswraps@gmail.com.'; };
+    var fail = function () { copyStatus.textContent = 'Copy failed. Select the text from your form and send it to (813) 475-1311.'; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(lastText).then(ok, fail);
+    else {
+      var t = document.createElement('textarea'); t.value = lastText; t.setAttribute('readonly', ''); t.style.position = 'absolute'; t.style.left = '-9999px';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy') ? ok() : fail(); } catch (err) { fail(); }
+      document.body.removeChild(t);
+    }
+  });
+
   $('#editAgain').addEventListener('click', function () {
+    copyStatus && (copyStatus.textContent = '');
     done.hidden = true;
     form.hidden = false;
     form.elements.name.focus();

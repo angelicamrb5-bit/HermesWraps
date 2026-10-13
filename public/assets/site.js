@@ -56,6 +56,7 @@
 
   /* Hero background video: plays muted unless reduced motion; always pausable */
   var hv = $('#heroVideo'), toggle = $('#heroVideoToggle');
+  var heroInView = true;
   if (hv && toggle) {
     var label = $('span', toggle);
     var icon = $('svg', toggle);
@@ -80,6 +81,7 @@
     /* Save battery: pause while off screen, resume if it was playing */
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (en) {
+        heroInView = en[0].isIntersecting;
         if (toggle.getAttribute('aria-pressed') === 'true') return;
         if (en[0].isIntersecting) { var q = hv.play(); if (q && q.catch) q.catch(function () {}); }
         else hv.pause();
@@ -87,7 +89,8 @@
     }
   }
 
-  /* Sticky mobile CTA: after the hero, hidden near the closing band */
+  /* Sticky mobile CTA: after the hero, hidden near the closing band and
+     while a process video is on screen (it would cover the video controls) */
   var sticky = $('#stickyCta');
   if (sticky && 'IntersectionObserver' in window) {
     var hero = $('#hero') || $('.page-hero'), closing = $('#closing'), footer = $('.site-footer');
@@ -99,7 +102,7 @@
       $('a', sticky).tabIndex = show ? 0 : -1;
     };
     if (hero) new IntersectionObserver(function (en) { pastHero = !en[0].isIntersecting && en[0].boundingClientRect.top < 0; update(); }).observe(hero);
-    var ends = [closing, footer].filter(Boolean), seen = new Map();
+    var ends = [closing, footer].concat($$('.video-card')).filter(Boolean), seen = new Map();
     var endObs = new IntersectionObserver(function (en) {
       en.forEach(function (x) { seen.set(x.target, x.isIntersecting); });
       nearEnd = Array.from(seen.values()).some(Boolean); update();
@@ -116,7 +119,7 @@
       if (hv && !hv.paused) hv.pause();
     });
     v.addEventListener('pause', function () {
-      if (hv && toggle && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !clips.some(function (o) { return !o.paused; })) {
+      if (hv && toggle && heroInView && !document.hidden && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !clips.some(function (o) { return !o.paused; })) {
         var q = hv.play(); if (q && q.catch) q.catch(function () {});
       }
     });

@@ -266,6 +266,18 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 }
 .video-toggle:hover { border-color: var(--hw-gold); }
 .video-toggle svg { width: 14px; height: 14px; }
+/* Desktop: the hero clip is vertical (9:16). Show it whole in a framed panel
+   beside the copy instead of blowing it up to full width. */
+@media (min-width: 961px) {
+  .hero::before { background: linear-gradient(90deg, var(--hw-bg-dark) 0%, var(--hw-burgundy) 100%); }
+  .hero-media {
+    inset: auto; z-index: 0; top: 50%; right: max(var(--hw-gutter), (100% - var(--hw-container)) / 2);
+    width: auto; height: calc(100% - 2 * var(--hw-space-8)); aspect-ratio: 9 / 16; transform: translateY(-50%);
+    border-radius: var(--hw-radius-media); box-shadow: 0 0 0 1px var(--hw-ring-gold); background: var(--hw-bg-dark);
+  }
+  .hero-content { padding-right: calc(var(--hw-space-8) + min(26vw, 340px)); }
+  .video-toggle { right: auto; left: max(var(--hw-gutter), (100% - var(--hw-container)) / 2); }
+}
 @media (max-width: 640px) {
   .hero::before { background: linear-gradient(180deg, var(--hw-overlay) 0%, var(--hw-overlay-strong) 100%); }
   .hero-content { min-height: 0; padding-block: 64px 96px; }
@@ -292,8 +304,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 @media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
 .project-card { position: relative; margin: 0; }
 .project-card .media { position: relative; overflow: hidden; border-radius: var(--hw-radius-media); aspect-ratio: 4 / 3; background: var(--hw-bg-alt); }
-.project-card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--hw-dur-base) var(--hw-ease); }
-.project-card:hover .media img { transform: scale(1.02); }
+.project-card .media img { width: 100%; height: 100%; object-fit: cover; }
 .project-card .badge { position: absolute; top: var(--hw-space-3); left: var(--hw-space-3); z-index: 1; margin: 0; color: var(--hw-text-on-dark); }
 .project-card h3 { margin: var(--hw-space-4) 0 var(--hw-space-2); }
 .project-card h3 a, .project-card h3 button { color: inherit; text-decoration: none; font: inherit; background: none; border: 0; padding: 0; text-align: left; cursor: pointer; }
@@ -309,8 +320,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 @media (max-width: 560px) { .type-grid { grid-template-columns: 1fr; } }
 .type-card { position: relative; display: flex; flex-direction: column; }
 .type-card .media { overflow: hidden; border-radius: var(--hw-radius-media); aspect-ratio: 4 / 3; background: var(--hw-bg-alt); }
-.type-card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--hw-dur-base) var(--hw-ease); }
-.type-card:hover .media img { transform: scale(1.02); }
+.type-card .media img { width: 100%; height: 100%; object-fit: cover; }
 .type-card h2, .type-card h3 { font: 600 var(--hw-text-h3)/var(--hw-leading-heading) var(--hw-font-display); font-style: normal; margin: var(--hw-space-4) 0 var(--hw-space-2); }
 .type-card h2 a, .type-card h3 a { color: inherit; text-decoration: none; }
 .type-card h2 a::after, .type-card h3 a::after { content: ""; position: absolute; inset: 0; }
@@ -357,6 +367,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .video-card figcaption { margin-top: var(--hw-space-3); font-size: var(--hw-text-small); color: var(--hw-text-muted); }
 .video-card figcaption strong { display: block; color: var(--hw-text); font-size: var(--hw-text-body); }
 .video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--hw-space-5); }
+.video-grid .video-card video { max-height: 70vh; }
 @media (max-width: 900px) { .video-grid { grid-template-columns: 1fr; max-width: 420px; } }
 
 /* ---------- Service cards ---------- */
@@ -530,3 +541,4 @@ fieldset.optional legend { padding: 0 var(--hw-space-2) 0 0; font: 500 var(--hw-
 .terms-list li { padding: var(--hw-space-5) 0; border-top: 1px solid var(--hw-border); }
 .terms-list h3 { margin-bottom: var(--hw-space-2); }
 .terms-list p { margin: 0; }
+.copy-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--hw-space-3); }

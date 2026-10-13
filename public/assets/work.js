@@ -10,6 +10,7 @@
   /* No type chosen: show one sample per type. A type chosen: show only its catalog. */
   function apply(cat, focus) {
     if (!LABELS[cat]) {
+      filters.forEach(function (f) { f.setAttribute('aria-pressed', 'false'); });
       types.hidden = false; catalog.hidden = true;
       return;
     }
@@ -29,6 +30,15 @@
     });
   });
   window.addEventListener('hashchange', function () { apply(location.hash.slice(1), true); });
+  /* A link to the catalog that is already open doesn't change the hash, so handle it here */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="/work#"]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+    var cat = a.getAttribute('href').split('#')[1];
+    if (!LABELS[cat] || location.hash.slice(1) !== cat) return;
+    e.preventDefault();
+    apply(cat, true);
+  });
   document.querySelector('[data-type-reset]').addEventListener('click', function (e) {
     e.preventDefault();
     history.pushState(null, '', location.pathname);
@@ -69,6 +79,14 @@
     if (list.length < 2) return;
     if (e.key === 'ArrowLeft') { e.preventDefault(); show(at - 1); }
     if (e.key === 'ArrowRight') { e.preventDefault(); show(at + 1); }
+  });
+  /* Swipe left/right on touch screens */
+  var x0 = null;
+  img.addEventListener('touchstart', function (e) { x0 = e.touches.length === 1 ? e.touches[0].clientX : null; }, { passive: true });
+  img.addEventListener('touchend', function (e) {
+    if (x0 === null || list.length < 2) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) show(dx < 0 ? at + 1 : at - 1);
   });
   dlg.querySelector('[data-close-zoom]').addEventListener('click', function () { dlg.close(); });
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
