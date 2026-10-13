@@ -1,11 +1,6 @@
 {
-  // Cloudflare Workers (static assets). Deploy: `npx wrangler deploy`,
-  // or connect this repo in Cloudflare → Workers & Pages → Create → Import a repository.
-  "name": "hermes-wraps",
+  // Cloudflare Pages: publishes the static site in ./public (no build step).
+  "name": "hermeswraps",
   "compatibility_date": "2026-09-01",
-  "assets": {
-    "directory": "./public",
-    "html_handling": "auto-trailing-slash",
-    "not_found_handling": "404-page"
-  }
+  "pages_build_output_dir": "./public"
 }

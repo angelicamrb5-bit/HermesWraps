@@ -11,11 +11,11 @@ Sitio estático de **hermeswraps.com**. Todo lo que se publica está en `public/
 
 El original de Muse está guardado sin cambios en el commit `144b4e9` ("Add original Hermes Wraps site…").
 
-## Publicar en Cloudflare (cuenta de Hermes)
+## Publicar en Cloudflare Pages (cuenta de Hermes)
 
-1. Cloudflare → **Workers & Pages** → **Create** → **Import a repository** → elige este repositorio.
-2. Rama de producción: `main` (o la que se fusione). No hace falta comando de build; `wrangler.jsonc` ya indica que se publique `public/`.
-3. En el Worker: **Settings → Domains & Routes → Add → Custom domain** → `hermeswraps.com` (y `www.hermeswraps.com`, con redirección a la versión sin www).
+1. Proyecto Pages `hermeswraps` conectado a este repositorio. Rama de producción: `main`.
+2. No hace falta comando de build: `wrangler.jsonc` indica que se publique la carpeta `public/`.
+3. **Custom domains** → `hermeswraps.com` y `www.hermeswraps.com` (redirigir www a la versión sin www con una regla de redirección).
 4. Activa **Web Analytics** (sin cookies) para el dominio.
 
 ## Datos de contacto
