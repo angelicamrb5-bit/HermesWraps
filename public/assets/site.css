@@ -292,7 +292,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 @media (max-width: 640px) { .card-grid { grid-template-columns: 1fr; } }
 .project-card { position: relative; margin: 0; }
 .project-card .media { position: relative; overflow: hidden; border-radius: var(--hw-radius-media); aspect-ratio: 4 / 3; background: var(--hw-bg-alt); }
-.project-card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--hw-dur-base) var(--hw-ease); }
+.project-card .media img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform var(--hw-dur-base) var(--hw-ease); }
 .project-card:hover .media img { transform: scale(1.02); }
 .project-card .badge { position: absolute; top: var(--hw-space-3); left: var(--hw-space-3); z-index: 1; margin: 0; color: var(--hw-text-on-dark); }
 .project-card h3 { margin: var(--hw-space-4) 0 var(--hw-space-2); }
@@ -353,7 +353,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 
 /* Video card */
 .video-card { margin: 0; }
-.video-card video { width: 100%; max-height: 640px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--hw-radius-media); background: var(--hw-bg-dark); }
+.video-card video { width: 100%; height: auto; max-height: 640px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--hw-radius-media); background: var(--hw-bg-dark); }
 .video-card figcaption { margin-top: var(--hw-space-3); font-size: var(--hw-text-small); color: var(--hw-text-muted); }
 .video-card figcaption strong { display: block; color: var(--hw-text); font-size: var(--hw-text-body); }
 .video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--hw-space-5); }
@@ -469,12 +469,17 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .empty-state { padding: var(--hw-space-7) 0; color: var(--hw-text-muted); }
 
 /* Image dialog */
-.zoom { max-width: min(1100px, 94vw); padding: 0; border: 0; border-radius: var(--hw-radius-card); background: var(--hw-bg-dark); color: var(--hw-text-on-dark); }
+.zoom { width: min(1100px, calc(100vw - 16px)); max-width: none; max-height: calc(100dvh - 16px); padding: 0; border: 0; border-radius: var(--hw-radius-card); background: var(--hw-bg-dark); color: var(--hw-text-on-dark); overflow: hidden; }
+.zoom[open] { display: flex; flex-direction: column; }
 .zoom::backdrop { background: var(--hw-overlay-strong); }
-.zoom img { max-height: 80vh; width: auto; margin: auto; }
-.zoom .zoom-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--hw-space-4); padding: var(--hw-space-3) var(--hw-space-4); }
-.zoom .zoom-bar { flex-wrap: wrap; }
-.zoom .zoom-bar p { margin: 0; font-size: var(--hw-text-small); flex: 1 1 260px; }
+.zoom img { display: block; flex: 1 1 auto; min-height: 0; width: 100%; height: auto; max-height: calc(100dvh - 140px); object-fit: contain; margin: 0 auto; background: var(--hw-bg-dark); }
+.zoom .zoom-bar { display: flex; align-items: center; justify-content: space-between; gap: var(--hw-space-3); padding: var(--hw-space-3) var(--hw-space-4); }
+@media (max-width: 560px) {
+  .zoom .zoom-bar { flex-direction: column; align-items: stretch; }
+  .zoom-nav { justify-content: space-between; }
+}
+.zoom .zoom-bar p { margin: 0; font-size: var(--hw-text-small); }
+@media (min-width: 561px) { .zoom .zoom-bar { flex-wrap: wrap; } .zoom .zoom-bar p { flex: 1 1 260px; } }
 .zoom-nav { display: flex; align-items: center; gap: var(--hw-space-2); }
 .zoom-nav .btn { min-width: 44px; min-height: 44px; }
 .project-card .count { color: var(--hw-accent-text); }
@@ -530,3 +535,9 @@ fieldset.optional legend { padding: 0 var(--hw-space-2) 0 0; font: 500 var(--hw-
 .terms-list li { padding: var(--hw-space-5) 0; border-top: 1px solid var(--hw-border); }
 .terms-list h3 { margin-bottom: var(--hw-space-2); }
 .terms-list p { margin: 0; }
+
+/* Phones: keep vertical process videos from filling several screens */
+@media (max-width: 640px) {
+  .video-card video { max-height: 70vh; }
+  .video-card { max-width: 360px; margin-inline: auto; }
+}

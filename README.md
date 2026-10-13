@@ -23,3 +23,10 @@ El original de Muse está guardado sin cambios en el commit `144b4e9` ("Add orig
 Teléfono y WhatsApp: +1 813 475 1311 · Correo: hermeswraps@gmail.com (cambiar por el correo del dominio cuando exista; buscar `hermeswraps@gmail.com` en `public/`).
 
 Los datos pendientes del cliente están marcados en el código como comentarios `[CLIENT TO SUPPLY: …]`; no se muestran en la página.
+
+## Editar el sitio
+
+- `public/index.html` y `public/book.html` se editan a mano.
+- `work.html`, `terms.html` y `404.html` se generan: edita `scripts/pages.py` (proyectos, textos) y ejecuta `python3 scripts/build.py` (requiere Pillow).
+- El build también agrega `srcset` a las fotos (versión `-800.jpg` + 1600 px) y `?v=<hash>` a CSS/JS para que los navegadores no mezclen versiones.
+- Fotos nuevas: guárdalas en `public/assets/work/nombre.jpg` (1600 px) y `nombre-800.jpg` (800 px).
