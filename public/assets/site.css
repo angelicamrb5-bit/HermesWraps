@@ -163,7 +163,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 
 /* Tagline bar motif */
 .tagline-bar {
-  display: inline-block; margin: 0 0 var(--hw-space-5);
+  display: inline-block; align-self: flex-start; width: fit-content; margin: 0 0 var(--hw-space-5);
   padding: 6px 14px; background: var(--hw-tagline-bg); color: var(--hw-text-on-dark);
   transform: skewX(var(--hw-skew));
   font: 600 0.75rem/1.2 var(--hw-font-body); letter-spacing: var(--hw-tracking-eyebrow); text-transform: uppercase;
@@ -508,9 +508,3 @@ fieldset.optional legend { padding: 0 var(--hw-space-2) 0 0; font: 500 var(--hw-
 .terms-list li { padding: var(--hw-space-5) 0; border-top: 1px solid var(--hw-border); }
 .terms-list h3 { margin-bottom: var(--hw-space-2); }
 .terms-list p { margin: 0; }
-
-/* ---------- Application reveal (once per page) ---------- */
-@keyframes hw-wipe { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
-.js .reveal-wipe { clip-path: inset(0 100% 0 0); }
-.js .reveal-wipe.is-in { animation: hw-wipe var(--hw-dur-wipe) var(--hw-ease) forwards; }
-@media (prefers-reduced-motion: reduce) { .js .reveal-wipe { clip-path: none; } .js .reveal-wipe.is-in { animation: none; } }

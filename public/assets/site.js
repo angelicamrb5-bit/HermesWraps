@@ -107,17 +107,29 @@
     ends.forEach(function (el) { endObs.observe(el); });
   }
 
-  /* Application reveal: once per page */
-  var wipe = $('.reveal-wipe');
-  if (wipe) {
-    if (reduced || !('IntersectionObserver' in window)) wipe.classList.add('is-in');
-    else {
-      var wo = new IntersectionObserver(function (en) {
-        if (en[0].isIntersecting) { wipe.classList.add('is-in'); wo.disconnect(); }
-      }, { threshold: 0.35 });
-      wo.observe(wipe);
-    }
+  /* Process videos (they have music): one at a time, and they stop when
+     scrolled out of view, so sound never keeps playing in the background */
+  var clips = $$('.video-card video');
+  clips.forEach(function (v) {
+    v.addEventListener('play', function () {
+      clips.forEach(function (o) { if (o !== v && !o.paused) o.pause(); });
+      if (hv && !hv.paused) hv.pause();
+    });
+    v.addEventListener('pause', function () {
+      if (hv && toggle && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !clips.some(function (o) { return !o.paused; })) {
+        var q = hv.play(); if (q && q.catch) q.catch(function () {});
+      }
+    });
+  });
+  if (clips.length && 'IntersectionObserver' in window) {
+    var co = new IntersectionObserver(function (en) {
+      en.forEach(function (x) { if (!x.isIntersecting && !x.target.paused) x.target.pause(); });
+    }, { threshold: 0.25 });
+    clips.forEach(function (v) { co.observe(v); });
   }
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) clips.forEach(function (v) { if (!v.paused) v.pause(); });
+  });
 
   /* Active nav link for in-page sections */
   var navLinks = $$('.main-nav ul a[href^="/#"]');
