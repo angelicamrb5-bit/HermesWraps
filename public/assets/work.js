@@ -2,24 +2,41 @@
 (function () {
   'use strict';
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
-  var cards = $$('#workGrid .project-card'), filters = $$('.filter'), prompt = document.querySelector('[data-prompt]');
-  var empty = document.getElementById('emptyState'), status = document.getElementById('filterStatus');
-  var LABELS = { all: 'All', commercial: 'Commercial & work vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl', vehicle: 'Personal vehicles' };
+  var cards = $$('#workGrid .project-card'), filters = $$('.filter');
+  var types = document.getElementById('types'), catalog = document.getElementById('catalog');
+  var title = document.getElementById('catalogTitle'), status = document.getElementById('filterStatus');
+  var LABELS = { commercial: 'Commercial & work vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl', vehicle: 'Personal vehicles' };
 
-  function apply(cat, fromHash) {
-    if (!LABELS[cat]) cat = 'all';
+  /* No type chosen: show one sample per type. A type chosen: show only its catalog. */
+  function apply(cat, focus) {
+    if (!LABELS[cat]) {
+      types.hidden = false; catalog.hidden = true;
+      return;
+    }
     var n = 0;
-    cards.forEach(function (c) { var on = cat === 'all' || c.getAttribute('data-cat') === cat; c.hidden = !on; if (on) n++; });
+    cards.forEach(function (c) { var on = c.getAttribute('data-cat') === cat; c.hidden = !on; if (on) n++; });
     filters.forEach(function (f) { f.setAttribute('aria-pressed', String(f.getAttribute('data-filter') === cat)); });
-    if (prompt) prompt.hidden = cat !== 'all';
-    empty.hidden = n > 0;
-    status.textContent = LABELS[cat] + ': ' + n + (n === 1 ? ' project' : ' projects');
-    if (!fromHash) history.replaceState(null, '', cat === 'all' ? location.pathname : '#' + cat);
+    types.hidden = true; catalog.hidden = false;
+    title.textContent = LABELS[cat] + ' · ' + n + (n === 1 ? ' project' : ' projects');
+    status.textContent = title.textContent;
+    if (focus) { title.focus({ preventScroll: true }); catalog.scrollIntoView(); }
   }
-  filters.forEach(function (f) { f.addEventListener('click', function () { apply(f.getAttribute('data-filter')); }); });
-  var reset = document.querySelector('[data-filter-reset]');
-  if (reset) reset.addEventListener('click', function (e) { e.preventDefault(); apply('all'); });
-  apply(location.hash.slice(1) || 'all', true);
+  filters.forEach(function (f) {
+    f.addEventListener('click', function () {
+      var cat = f.getAttribute('data-filter');
+      history.replaceState(null, '', '#' + cat);
+      apply(cat, false);
+    });
+  });
+  window.addEventListener('hashchange', function () { apply(location.hash.slice(1), true); });
+  document.querySelector('[data-type-reset]').addEventListener('click', function (e) {
+    e.preventDefault();
+    history.pushState(null, '', location.pathname);
+    apply('', false);
+    window.scrollTo(0, 0);
+  });
+  window.addEventListener('popstate', function () { apply(location.hash.slice(1), false); });
+  apply(location.hash.slice(1), false);
 
   var dlg = document.getElementById('zoom');
   if (!dlg || typeof dlg.showModal !== 'function') {
@@ -28,7 +45,7 @@
   }
   var img = dlg.querySelector('img'), cap = document.getElementById('zoomCap'), cnt = document.getElementById('zoomCount');
   var prev = dlg.querySelector('[data-zoom-prev]'), next = dlg.querySelector('[data-zoom-next]');
-  var list = [], at = 0, title = '', alt = '';
+  var list = [], at = 0, alt = '';
   function show(n) {
     at = (n + list.length) % list.length;
     img.src = list[at];

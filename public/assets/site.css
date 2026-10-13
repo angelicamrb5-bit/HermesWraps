@@ -303,6 +303,24 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .project-card p { margin: 0; color: var(--hw-text); }
 .after-proof { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--hw-space-5); margin-top: var(--hw-space-7); padding-top: var(--hw-space-6); border-top: 1px solid var(--hw-border); }
 
+/* Type tiles: one sample per type of work */
+.type-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--hw-space-5); }
+@media (max-width: 1100px) { .type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .type-grid { grid-template-columns: 1fr; } }
+.type-card { position: relative; display: flex; flex-direction: column; }
+.type-card .media { overflow: hidden; border-radius: var(--hw-radius-media); aspect-ratio: 4 / 3; background: var(--hw-bg-alt); }
+.type-card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--hw-dur-base) var(--hw-ease); }
+.type-card:hover .media img { transform: scale(1.02); }
+.type-card h2, .type-card h3 { font: 600 var(--hw-text-h3)/var(--hw-leading-heading) var(--hw-font-display); font-style: normal; margin: var(--hw-space-4) 0 var(--hw-space-2); }
+.type-card h2 a, .type-card h3 a { color: inherit; text-decoration: none; }
+.type-card h2 a::after, .type-card h3 a::after { content: ""; position: absolute; inset: 0; }
+.type-card:hover h2 a, .type-card:hover h3 a { text-decoration: underline; text-underline-offset: 4px; }
+.type-card p { margin: 0 0 var(--hw-space-2); color: var(--hw-text-muted); }
+.type-card .text-link { margin-top: auto; }
+.type-card:hover .text-link .arrow { transform: translateX(4px); }
+#catalog h2 { margin: var(--hw-space-3) 0 var(--hw-space-5); }
+#catalog .inline-prompt { margin-top: var(--hw-space-7); }
+
 /* ---------- Process ---------- */
 .steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--hw-space-5); margin: 0 0 var(--hw-space-7); padding: 0; list-style: none; counter-reset: step; }
 .steps li { position: relative; counter-increment: step; }
