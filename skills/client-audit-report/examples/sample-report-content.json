@@ -1,0 +1,98 @@
+{
+  "client_name": "Bright Smile Dental",
+  "site_url": "brightsmiledental.com",
+  "report_title": "Website Audit: Findings & Recommendations",
+  "subtitle": "A focused plan to turn more website visitors into booked appointments",
+  "prepared_by": "Northlight Digital",
+  "date": "October 2026",
+  "brand_color": "0E6F74",
+
+  "executive_summary": {
+    "overview": [
+      "Bright Smile Dental has real strengths online: an outstanding reputation, a modern-looking website and a long-established web presence that other local sites already reference.",
+      "However, the website is not yet turning that reputation into appointments as well as it could. Two of your most valuable service pages are currently hidden from Google, booking is hard to reach on a phone, and the new-patient form loses most people who start it. The good news is that the most important fixes are quick and inexpensive, and can be completed within a month, with a small number of larger improvements to follow over the next quarter."
+    ],
+    "at_a_glance": [
+      {"value": "4.9★", "label": "Google rating from 318 reviews, well above local competitors"},
+      {"value": "2", "label": "High-value service pages currently hidden from Google"},
+      {"value": "71%", "label": "Of visitors who start the new-patient form don't finish it"},
+      {"value": "5s+", "label": "For the homepage to load on a phone (target: under 2.5s)"}
+    ],
+    "key_takeaways": [
+      "Your reputation is a major competitive advantage, but the website barely shows it.",
+      "The biggest gains will come from removing friction: making it easy to find you, call you and book.",
+      "Five of the ten recommendations are quick wins that can be delivered in the next 30 days."
+    ]
+  },
+
+  "whats_working": [
+    {"title": "An exceptional reputation", "detail": "A 4.9-star rating from over 300 Google reviews in Austin, and strong ratings in Round Rock, put you well ahead of the local average. This is the kind of trust that new patients look for before choosing a dentist."},
+    {"title": "A clean, modern look", "detail": "The design is professional and your brand colours are used consistently, so the site already feels credible. Our recommendations build on this design rather than replacing it."},
+    {"title": "An established, well-referenced website", "detail": "Your site has been online since 2009 and is referenced by respected local organisations, including local news outlets and the Chamber of Commerce. That history gives you a solid platform to grow search visibility."},
+    {"title": "Secure and up to date at its core", "detail": "The site runs on a secure connection and the core website platform is current, which protects visitors and keeps future work straightforward."},
+    {"title": "Strong dentist biographies", "detail": "The team biographies are well written and reassuring. With better placement, they can do much more to win over new patients."}
+  ],
+
+  "opportunities": [
+    {
+      "title": "Key service pages are hidden from Google",
+      "impact": "High",
+      "finding": "Your Invisalign and Emergency Dentist pages are set to be invisible to search engines. This looks like a setting left over from when the site was built.",
+      "why_it_matters": "These are two of your highest-value services. Around 1,900 people a month search for an emergency dentist in Austin, and right now your site cannot appear for those searches at all."
+    },
+    {
+      "title": "Booking an appointment takes too much effort",
+      "impact": "High",
+      "finding": "On a phone, the 'Book Online' button is tucked inside the menu and the phone number can't be tapped to call. The new-patient form asks 18 questions, including sensitive details such as a Social Security number.",
+      "why_it_matters": "Most people looking for a dentist are on their phones and want to act quickly. Today, 7 in 10 people who start the form give up before submitting it, which means enquiries are being lost at the final step."
+    },
+    {
+      "title": "The site is slow on mobile",
+      "impact": "High",
+      "finding": "The homepage takes more than five seconds to show its main content on a typical phone, and the online booking page is slower still. The main causes are large rotating header images, extra behind-the-scenes code and basic hosting.",
+      "why_it_matters": "Many mobile visitors leave if a page takes more than about three seconds, and Google gives preference to faster sites. Speed affects both how many people find you and how many stay."
+    },
+    {
+      "title": "Your reputation isn't working hard enough for you",
+      "impact": "Medium",
+      "finding": "Your reviews don't appear anywhere on the website, the photos are stock images rather than your real team, and the Round Rock phone number and Saturday hours differ between your website, Google and several directories.",
+      "why_it_matters": "Real reviews and real faces are among the strongest reasons a new patient chooses one practice over another. Inconsistent contact details create confusion and can weaken how prominently Google shows your clinics."
+    },
+    {
+      "title": "Service and location pages say too little",
+      "impact": "Medium",
+      "finding": "Most service pages are short, with the Implants page under 100 words, and there are no dedicated pages for your Austin and Round Rock clinics. Patients also have no clear place to check whether you accept their insurance, even though it's their most common question.",
+      "why_it_matters": "Thin pages struggle to rank in search or to answer the questions patients have before booking. Today, most of your search visibility comes from people who already know your name, so there is significant room to reach new patients."
+    },
+    {
+      "title": "Security and accessibility need attention",
+      "impact": "Medium",
+      "finding": "One of the add-ons that powers the homepage slider has a known security weakness and several others are out of date. Some text and buttons are also hard to read, and the forms are difficult to use for people who rely on screen readers or keyboards.",
+      "why_it_matters": "Keeping the site secure protects your patients and your reputation. Making it accessible ensures every patient can book with you and reduces legal risk, since healthcare websites are increasingly expected to meet accessibility standards."
+    }
+  ],
+
+  "recommendations": [
+    {"action": "Make the Invisalign and Emergency pages visible to Google", "detail": "Switch off the leftover setting that hides these pages and ask Google to re-check them. This is a small change with a potentially large effect on new-patient searches.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Fix the security weakness and update the site's add-ons", "detail": "Update or remove the out-of-date add-ons, starting with the homepage slider, and confirm with your host that regular backups are in place.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Make calling and booking one tap away on mobile", "detail": "Show a visible 'Book Online' button and a tap-to-call phone number at the top of every page on phones.", "impact": "High", "effort": "Low", "timing": "Quick win"},
+    {"action": "Make your phone numbers and hours consistent everywhere", "detail": "Align the Round Rock phone number and Saturday hours across the website, Google and online directories so patients always reach you.", "impact": "Medium", "effort": "Low", "timing": "Quick win"},
+    {"action": "Start measuring calls, bookings and form submissions", "detail": "Set up tracking so we can see which pages and channels produce appointments. This turns future decisions from guesswork into evidence and lets us show the results of this work.", "impact": "Medium", "effort": "Low", "timing": "Quick win"},
+    {"action": "Simplify the new-patient form", "detail": "Reduce it to the essentials needed for a first appointment and collect sensitive details securely later at check-in. We'd expect this to noticeably reduce the number of people who give up partway through.", "impact": "High", "effort": "Medium", "timing": "Next"},
+    {"action": "Speed up the website on mobile", "detail": "Replace the rotating slider with a single, fast-loading image and a clear headline, trim unnecessary code, and add page caching or a hosting upgrade. The goal is under three seconds on a phone.", "impact": "High", "effort": "Medium", "timing": "Next"},
+    {"action": "Put your reviews and real team front and centre", "detail": "Add a selection of patient reviews to the homepage and service pages, use real photos of your team and clinics, and make the dentist biographies easy to find.", "impact": "Medium", "effort": "Medium", "timing": "Next"},
+    {"action": "Make the site easier for everyone to use", "detail": "Improve text and button contrast, label form fields properly and restore keyboard navigation, so that all patients can find information and book.", "impact": "Medium", "effort": "Medium", "timing": "Next"},
+    {"action": "Build out service, location and insurance pages", "detail": "Expand each service page to answer common patient questions, create dedicated pages for the Austin and Round Rock clinics, and add a clear insurance and payment page. This is the foundation for growing visibility with people who don't yet know your name.", "impact": "High", "effort": "High", "timing": "Later"}
+  ],
+
+  "next_steps": {
+    "intro": "To get started, we suggest the following over the next two weeks:",
+    "steps": [
+      {"title": "Approve the quick-win package", "detail": "Give the go-ahead on recommendations 1–5 so we can start immediately. Most of these can be completed within the first two weeks.", "timing": "This week"},
+      {"title": "Share website and hosting access", "detail": "We'll need administrator access to the website, your hosting account and your Google Business Profiles.", "timing": "This week"},
+      {"title": "Confirm a few details", "detail": "Let us know the correct Round Rock phone number and Saturday hours, which insurance plans you accept, and whether your host currently keeps backups.", "timing": "Next week"},
+      {"title": "Book a 45-minute planning session", "detail": "We'll walk through this report together, agree on scope and timing for the larger projects, and arrange a team photo shoot.", "timing": "Within two weeks"}
+    ],
+    "closing": "Your reputation is already doing the hard work. These changes will make sure your website does it justice. We look forward to discussing the plan with you."
+  }
+}

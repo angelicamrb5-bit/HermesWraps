@@ -1,0 +1,23 @@
+{
+  "skill_name": "client-audit-report",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just finished the site audit for Bright Smile Dental (examples/sample-audit.md). Can you turn it into something I can send the practice owner? She's not technical at all.",
+      "expected_output": "A .docx with cover, executive summary, what's working, 4-6 opportunities, ranked recommendations grouped Quick win / Next / Later, and next steps; plain language, no URLs or tool names; the noindexed service pages, mobile booking friction and form abandonment ranked near the top; favicon / copyright-year items cut.",
+      "files": ["examples/sample-audit.md"]
+    },
+    {
+      "id": 2,
+      "prompt": "here's my seo audit notes for an ecommerce candle shop (pasted below) - make a polished word doc for the client, brand color is #8B5E3C. keep it short, they hate long reports\n\n- 340 product pages, 120 have duplicate descriptions copied from supplier\n- category pages have no intro text\n- checkout: guest checkout disabled, forced account creation\n- PSI mobile 52, LCP 3.9s\n- no product schema, no review stars in SERPs\n- 1,200 4.8-star reviews on Judge.me but only shown on product pages\n- blog posts get 60% of organic traffic but no links to products\n- abandoned cart emails not set up in Klaviyo\n- site is on Shopify, theme up to date, SSL fine\n- Instagram 45k followers, strong UGC",
+      "expected_output": "Uses brand color 8B5E3C, stays near the short end (about 4 pages), ranks forced account creation and abandoned-cart emails as high-impact quick wins, translates schema/SERP jargon.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Convert audit.md into a client report. It's for a law firm, accessibility is a big concern for them because of a demand letter they got last year.",
+      "expected_output": "Accessibility issues are elevated to the top opportunity with a calm, non-alarmist explanation of legal risk; the rest of the structure is intact.",
+      "files": ["audit.md"]
+    }
+  ]
+}
