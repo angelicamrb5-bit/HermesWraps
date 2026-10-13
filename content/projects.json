@@ -1,0 +1,602 @@
+[
+  {
+    "file": "content/projects/sheilanys-sheiler-01.jpg",
+    "source": "E7927613-3ADC-477A-91BF-2F060AD13F69.jpg",
+    "client": "Sheilany's Sheiler (mobile barber)",
+    "sector": "Personal services",
+    "project": "Full van wrap",
+    "view": "front 3/4 close",
+    "rating": "support",
+    "note": "Tight crop; IMG_9873 is the better shot"
+  },
+  {
+    "file": "content/projects/home-prime-01.jpg",
+    "source": "IMG_8772.heic",
+    "client": "Home Prime Realty",
+    "sector": "Real estate",
+    "project": "Commercial graphics on Tesla Cybertruck",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": "Black + gold: matches the Hermes palette"
+  },
+  {
+    "file": "content/projects/home-prime-02.jpg",
+    "source": "IMG_8773.heic",
+    "client": "Home Prime Realty",
+    "sector": "Real estate",
+    "project": "Commercial graphics on Tesla Cybertruck",
+    "view": "side",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/home-prime-03.jpg",
+    "source": "IMG_8774.heic",
+    "client": "Home Prime Realty",
+    "sector": "Real estate",
+    "project": "Commercial graphics on Tesla Cybertruck",
+    "view": "rear",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/dkdy-construction-01.jpg",
+    "source": "IMG_8783.heic",
+    "client": "DKDY Construction",
+    "sector": "Construction",
+    "project": "Full van wrap (Nissan NV high roof)",
+    "view": "rear 3/4",
+    "rating": "hero",
+    "note": "Black + gold, crisp, great light: homepage candidate"
+  },
+  {
+    "file": "content/projects/dkdy-construction-02.jpg",
+    "source": "IMG_8784.heic",
+    "client": "DKDY Construction",
+    "sector": "Construction",
+    "project": "Full van wrap (Nissan NV high roof)",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/artemisa-tire-shop-01.jpg",
+    "source": "IMG_8857.heic",
+    "client": "Artemisa Tire Shop",
+    "sector": "Automotive",
+    "project": "Box truck wrap",
+    "view": "rear 3/4",
+    "rating": "support",
+    "note": "Very busy design; fine for gallery"
+  },
+  {
+    "file": "content/projects/artemisa-tire-shop-02.jpg",
+    "source": "IMG_8858.heic",
+    "client": "Artemisa Tire Shop",
+    "sector": "Automotive",
+    "project": "Box truck wrap",
+    "view": "rear 3/4",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/flooring-at-tampa-bay-01.jpg",
+    "source": "IMG_8876.heic",
+    "client": "Flooring at Tampa Bay",
+    "sector": "Construction",
+    "project": "Storefront door graphics",
+    "view": "front",
+    "rating": "support",
+    "note": "Proof of storefront / signage work"
+  },
+  {
+    "file": null,
+    "source": "IMG_8876.heic",
+    "client": "Flooring at Tampa Bay",
+    "sector": "Construction",
+    "project": "Storefront door graphics",
+    "view": "front",
+    "rating": "skip",
+    "note": "Duplicate of the previous file"
+  },
+  {
+    "file": null,
+    "source": "IMG_8923.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black roof",
+    "view": "front",
+    "rating": "skip",
+    "note": "Consumer job; keep off the corporate pages"
+  },
+  {
+    "file": null,
+    "source": "IMG_8924.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black roof",
+    "view": "side",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_8925.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black roof",
+    "view": "rear 3/4",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": "content/projects/pj-towing-01.jpg",
+    "source": "IMG_8993.heic",
+    "client": "PJ Towing & Recovery",
+    "sector": "Towing",
+    "project": "Tow truck wrap",
+    "view": "side",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_8994.heic",
+    "client": "PJ Towing & Recovery",
+    "sector": "Towing",
+    "project": "Tow truck wrap",
+    "view": "rear 3/4",
+    "rating": "skip",
+    "note": "Finger over the lens"
+  },
+  {
+    "file": "content/projects/magys-desserts-01.jpg",
+    "source": "IMG_9013.heic",
+    "client": "Magy's Desserts / La Appetite",
+    "sector": "Food & retail",
+    "project": "Refrigerator wrap",
+    "view": "side",
+    "rating": "support",
+    "note": "Shows 'all things vinyl' range"
+  },
+  {
+    "file": "content/projects/magys-desserts-02.jpg",
+    "source": "IMG_9014.heic",
+    "client": "Magy's Desserts / La Appetite",
+    "sector": "Food & retail",
+    "project": "Refrigerator wrap",
+    "view": "header detail",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/magys-desserts-03.jpg",
+    "source": "IMG_9015.heic",
+    "client": "Magy's Desserts / La Appetite",
+    "sector": "Food & retail",
+    "project": "Refrigerator wrap",
+    "view": "front 3/4",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/bms-inc-01.jpg",
+    "source": "IMG_9036.heic",
+    "client": "BMS Inc. (Building Mechanical Services)",
+    "sector": "HVAC / facilities",
+    "project": "Full van wrap (Ford Transit)",
+    "view": "front 3/4",
+    "rating": "hero",
+    "note": "Commercial HVAC: exactly the client profile to attract"
+  },
+  {
+    "file": "content/projects/bms-inc-02.jpg",
+    "source": "IMG_9037.heic",
+    "client": "BMS Inc. (Building Mechanical Services)",
+    "sector": "HVAC / facilities",
+    "project": "Full van wrap (Ford Transit)",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9089.heic",
+    "client": "Private client",
+    "sector": "Powersports",
+    "project": "Custom graphic wrap (Can-Am Maverick)",
+    "view": "side",
+    "rating": "skip",
+    "note": "Consumer / custom art; off-brand for corporate pages"
+  },
+  {
+    "file": "content/projects/gands-towing-01.jpg",
+    "source": "IMG_9344.heic",
+    "client": "Gands Towing",
+    "sector": "Towing",
+    "project": "Wrecker wrap (Ford F-series)",
+    "view": "front 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/gands-towing-02.jpg",
+    "source": "IMG_9345.heic",
+    "client": "Gands Towing",
+    "sector": "Towing",
+    "project": "Wrecker wrap (Ford F-series)",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/rvs-rv-select-01.jpg",
+    "source": "IMG_9346.heic",
+    "client": "RVS (Recreational Vehicle Select)",
+    "sector": "Dealership",
+    "project": "Utility cart graphics",
+    "view": "side",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/rvs-rv-select-02.jpg",
+    "source": "IMG_9347.heic",
+    "client": "RVS (Recreational Vehicle Select)",
+    "sector": "Dealership",
+    "project": "Utility cart graphics",
+    "view": "rear",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/rey-d-reyes-flooring-01.jpg",
+    "source": "IMG_9389.jpg",
+    "client": "Rey D Reyes Flooring",
+    "sector": "Construction",
+    "project": "Full van wrap (Chevy Express)",
+    "view": "side",
+    "rating": "strong",
+    "note": "Lower resolution (2048px). Ask for the original"
+  },
+  {
+    "file": "content/projects/life-decor-renovation-01.jpg",
+    "source": "IMG_9390.jpg",
+    "client": "Life Decor & Renovation",
+    "sector": "Construction",
+    "project": "Van wrap (Ford Transit)",
+    "view": "front 3/4",
+    "rating": "support",
+    "note": "Lower resolution"
+  },
+  {
+    "file": "content/projects/3-9-glass-01.jpg",
+    "source": "IMG_9391.jpg",
+    "client": "3&9 Glass LLC",
+    "sector": "Construction",
+    "project": "Van wrap (Ford Transit)",
+    "view": "rear 3/4",
+    "rating": "support",
+    "note": "Backlit, lower resolution"
+  },
+  {
+    "file": "content/projects/blays-cleaning-01.jpg",
+    "source": "IMG_9392.jpg",
+    "client": "Blay's Cleaning Services",
+    "sector": "Cleaning",
+    "project": "SUV wrap",
+    "view": "side",
+    "rating": "support",
+    "note": "Lower resolution"
+  },
+  {
+    "file": "content/projects/tampa-pc-consultants-01.jpg",
+    "source": "IMG_9545.heic",
+    "client": "Tampa PC Consultants",
+    "sector": "IT services",
+    "project": "Partial wrap + decals (Chevy Trax)",
+    "view": "side",
+    "rating": "strong",
+    "note": "Clean corporate look: shows a budget-friendly option"
+  },
+  {
+    "file": "content/projects/tampa-pc-consultants-02.jpg",
+    "source": "IMG_9546.heic",
+    "client": "Tampa PC Consultants",
+    "sector": "IT services",
+    "project": "Partial wrap + decals (Chevy Trax)",
+    "view": "rear",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/tampa-pc-consultants-03.jpg",
+    "source": "IMG_9547.heic",
+    "client": "Tampa PC Consultants",
+    "sector": "IT services",
+    "project": "Partial wrap + decals (Chevy Trax)",
+    "view": "side",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/tampa-pc-consultants-04.jpg",
+    "source": "IMG_9548.heic",
+    "client": "Tampa PC Consultants",
+    "sector": "IT services",
+    "project": "Partial wrap + decals (Chevy Trax)",
+    "view": "hood",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/hughes-electric-01.jpg",
+    "source": "IMG_9549.png",
+    "client": "Hughes Electric",
+    "sector": "Electrical",
+    "project": "Full van wrap (Ram ProMaster)",
+    "view": "front 3/4",
+    "rating": "support",
+    "note": "Screenshot (PNG, 1290px). Ask for the original photo"
+  },
+  {
+    "file": "content/projects/leo-tampa-pet-shop-01.jpg",
+    "source": "IMG_9596.heic",
+    "client": "Leo Tampa Pet Shop",
+    "sector": "Retail",
+    "project": "Storefront window graphics",
+    "view": "front",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/leo-tampa-pet-shop-02.jpg",
+    "source": "IMG_9597.heic",
+    "client": "Leo Tampa Pet Shop",
+    "sector": "Retail",
+    "project": "Storefront door graphics",
+    "view": "front",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": "content/projects/leo-tampa-pet-shop-03.jpg",
+    "source": "IMG_9598.heic",
+    "client": "Leo Tampa Pet Shop",
+    "sector": "Retail",
+    "project": "Storefront door graphics",
+    "view": "front 3/4",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9624.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black hood + roof",
+    "view": "front",
+    "rating": "skip",
+    "note": "Consumer job"
+  },
+  {
+    "file": null,
+    "source": "IMG_9625.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black hood + roof",
+    "view": "hood",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9626.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black hood + roof",
+    "view": "roof",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9627.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black hood + roof",
+    "view": "hood 3/4",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9628.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black hood + roof",
+    "view": "side",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": "content/projects/hyundai-tucson-01.jpg",
+    "source": "IMG_9649.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Color-change wrap (pink)",
+    "view": "front 3/4",
+    "rating": "skip",
+    "note": "Consumer job; good for a 'color change' page later"
+  },
+  {
+    "file": "content/projects/ypt-electrical-01.jpg",
+    "source": "IMG_9734.heic",
+    "client": "YPT Electrical Services",
+    "sector": "Electrical",
+    "project": "Full van wrap (Chevy Express)",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/olympus-electric-01.jpg",
+    "source": "IMG_9746.heic",
+    "client": "Olympus Electric",
+    "sector": "Electrical",
+    "project": "Commercial graphics on matte Cybertruck",
+    "view": "front 3/4",
+    "rating": "hero",
+    "note": "Minimal + premium: strongest corporate image"
+  },
+  {
+    "file": "content/projects/olympus-electric-02.jpg",
+    "source": "IMG_9747.heic",
+    "client": "Olympus Electric",
+    "sector": "Electrical",
+    "project": "Commercial graphics on matte Cybertruck",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/dial-3-demolition-01.jpg",
+    "source": "IMG_9759.heic",
+    "client": "Dial 3 Demolition",
+    "sector": "Construction / heavy equipment",
+    "project": "Dump truck wrap",
+    "view": "front 3/4",
+    "rating": "hero",
+    "note": "Heavy truck: proves large-format capability"
+  },
+  {
+    "file": "content/projects/dial-3-demolition-02.jpg",
+    "source": "IMG_9760.heic",
+    "client": "Dial 3 Demolition",
+    "sector": "Construction / heavy equipment",
+    "project": "Dump truck wrap",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/bosch-heating-cooling-01.jpg",
+    "source": "IMG_9764.heic",
+    "client": "Bosch Heating & Cooling",
+    "sector": "HVAC",
+    "project": "Full van wrap (Ford Transit)",
+    "view": "front 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/bosch-heating-cooling-02.jpg",
+    "source": "IMG_9765.heic",
+    "client": "Bosch Heating & Cooling",
+    "sector": "HVAC",
+    "project": "Full van wrap (Ford Transit)",
+    "view": "rear 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/all-in-one-septic-01.jpg",
+    "source": "IMG_9766.heic",
+    "client": "All In One Septic Solutions",
+    "sector": "Waste services",
+    "project": "Tank truck wrap",
+    "view": "side",
+    "rating": "strong",
+    "note": "Large commercial vehicle"
+  },
+  {
+    "file": "content/projects/all-in-one-septic-02.jpg",
+    "source": "IMG_9767.heic",
+    "client": "All In One Septic Solutions",
+    "sector": "Waste services",
+    "project": "Tank truck wrap",
+    "view": "side",
+    "rating": "support",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9778.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Hood accent",
+    "view": "front",
+    "rating": "skip",
+    "note": "Consumer job"
+  },
+  {
+    "file": null,
+    "source": "IMG_9779.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Hood accent",
+    "view": "front 3/4",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9796.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black roof / accents",
+    "view": "front",
+    "rating": "skip",
+    "note": "Consumer job"
+  },
+  {
+    "file": null,
+    "source": "IMG_9797.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black roof / accents",
+    "view": "roof",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": null,
+    "source": "IMG_9798.heic",
+    "client": "Private client",
+    "sector": "Personal vehicle",
+    "project": "Gloss black roof / accents",
+    "view": "front 3/4",
+    "rating": "skip",
+    "note": ""
+  },
+  {
+    "file": "content/projects/green-team-landscape-01.jpg",
+    "source": "IMG_9811.heic",
+    "client": "Your Green Team Landscape",
+    "sector": "Landscaping",
+    "project": "Box truck wrap (Isuzu)",
+    "view": "side",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/green-team-landscape-02.jpg",
+    "source": "IMG_9812.heic",
+    "client": "Your Green Team Landscape",
+    "sector": "Landscaping",
+    "project": "Box truck wrap (Isuzu)",
+    "view": "front 3/4",
+    "rating": "strong",
+    "note": ""
+  },
+  {
+    "file": "content/projects/sheilanys-sheiler-02.jpg",
+    "source": "IMG_9873.heic",
+    "client": "Sheilany's Sheiler (mobile barber)",
+    "sector": "Personal services",
+    "project": "Full van wrap (Ram ProMaster)",
+    "view": "rear 3/4",
+    "rating": "support",
+    "note": ""
+  }
+]

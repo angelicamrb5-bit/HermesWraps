@@ -19,3 +19,8 @@ confident, precise, premium — never flashy.
 ## Sources
 - `brand/source/logo.jpg` — digital master (1024px JPG; a clean vector is still needed).
 - `brand/source/business-card-photo.jpg` — phone photo, colors approximate.
+
+## Project photos
+- Use only images from `content/projects/` (EXIF/GPS already stripped); metadata is in `content/projects.json`.
+- Corporate pages use `hero` / `strong` ratings; never show `skip` photos there.
+- Blur license plates and confirm client permission before a photo goes live.
