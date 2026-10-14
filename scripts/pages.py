@@ -38,7 +38,13 @@ projects = [
 ]
 from PIL import Image
 ROOT = os.path.join(PUBLIC, 'assets') + '/'
-def thumb(p): return p + ('-800' if p.startswith(W) else '') + '.jpg'
+def thumb(p):
+    # Card photo: the background-free cutout from scripts/cutouts.py when one exists
+    # (whole vehicle in frame); otherwise the original. The viewer always gets originals.
+    cut = 'cutout/' + p.split('/')[-1]
+    if os.path.exists(ROOT + cut + '-800.jpg'):
+        return cut + '-800.jpg'
+    return p + ('-800' if p.startswith(W) else '') + '.jpg'
 
 cards = []
 for i, (cat, imgs, title, meta, line, alt) in enumerate(projects):

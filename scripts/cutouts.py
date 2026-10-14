@@ -24,6 +24,10 @@ STONE = (236, 230, 220)    # --hw-stone
 GROUND = 0.86              # tyres sit at 86% of the frame height
 MAX_W, MAX_H = 0.86, 0.72  # largest share of the frame the vehicle may fill
 MODEL = "isnet-general-use"
+# Photos where a neighbouring vehicle touches the subject need a harder split.
+SPLIT = {"corvette-front": 40}
+# Photos where a red car parked behind sits on the roofline: drop strong reds in the top quarter.
+DROP_RED_TOP = {"corvette-front"}
 
 
 def mask_for(name: str, src: Image.Image) -> Image.Image:
@@ -37,17 +41,17 @@ def mask_for(name: str, src: Image.Image) -> Image.Image:
     return m
 
 
-def clean(mask: Image.Image) -> Image.Image:
+def clean(mask: Image.Image, split: int = 12) -> Image.Image:
     # Keep only the vehicle (largest blob) and close see-through holes in the glass.
     a = np.asarray(mask, dtype=np.uint8)
     solid = a > 128
     # Erode first so a neighbouring car that merely touches the vehicle separates.
-    core = ndimage.binary_erosion(solid, iterations=12)
+    core = ndimage.binary_erosion(solid, iterations=split)
     labels, n = ndimage.label(core)
     if n > 1:
         sizes = ndimage.sum(core, labels, range(1, n + 1))
         core = labels == (int(np.argmax(sizes)) + 1)
-    keep = ndimage.binary_dilation(core, iterations=14) & solid
+    keep = ndimage.binary_dilation(core, iterations=split + 2) & solid
     keep = ndimage.binary_fill_holes(keep)
     near = ndimage.binary_dilation(keep, iterations=6)
     a = np.where(keep, 255, np.where(near, a, 0)).astype(np.uint8)
@@ -83,7 +87,19 @@ def backdrop() -> Image.Image:
 
 def stage(name: str) -> None:
     src = Image.open(ASSETS / f"{name}.jpg").convert("RGB")
-    mask = clean(mask_for(name, src))
+    base = name.split("/")[-1]
+    raw = mask_for(name, src)
+    if base in DROP_RED_TOP:
+        a, rgb = np.asarray(raw).copy(), np.asarray(src).astype(int)
+        rows = np.where((a > 128).any(axis=1))[0]
+        top = rows[0] + (rows[-1] - rows[0]) // 4
+        r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+        red = (r > 90) & (r > g * 1.5) & (r > b * 1.5)
+        red = ndimage.binary_dilation(red, iterations=4)
+        red[top:] = False
+        a[red] = 0
+        raw = Image.fromarray(a, "L")
+    mask = clean(raw, SPLIT.get(base, 12))
     box = mask.getbbox()
     car, cmask = src.crop(box), mask.crop(box)
 
@@ -99,7 +115,6 @@ def stage(name: str) -> None:
     canvas.paste(car, (x, y), cmask)
 
     OUT.mkdir(exist_ok=True)
-    base = name.split("/")[-1]
     for suffix, im in (("", canvas), ("-800", canvas.resize((800, 600), Image.LANCZOS))):
         im.save(OUT / f"{base}{suffix}.jpg", quality=84, optimize=True, progressive=True)
         im.save(OUT / f"{base}{suffix}.webp", quality=80, method=6)
