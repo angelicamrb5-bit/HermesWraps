@@ -479,8 +479,9 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--hw-space-3) var(--hw-space-6); margin-top: var(--hw-space-7); padding: var(--hw-space-5) 0 calc(var(--hw-space-5) + env(safe-area-inset-bottom)); border-top: 1px solid var(--hw-border-on-dark); font-size: var(--hw-text-small); color: var(--hw-text-on-dark-muted); }
 .footer-bottom.flush-top { margin-top: 0; }
 .footer-bottom .signature { font-family: var(--hw-font-display); font-style: italic; font-weight: 600; font-size: 1.0625rem; color: var(--hw-gold-highlight); margin: 0; }
-.footer-bottom ul { display: flex; flex-wrap: wrap; gap: 0 var(--hw-space-4); margin: 0; padding: 0; list-style: none; }
-.footer-bottom a { padding: 4px 0; }
+.footer-bottom ul { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--hw-space-4); margin: 0; padding: 0; list-style: none; }
+.footer-bottom li { line-height: 1.5; }
+.footer-bottom a { padding: 4px 0; color: inherit; }
 .has-sticky .site-footer { padding-bottom: 64px; }
 @media (min-width: 961px) { .has-sticky .site-footer { padding-bottom: 0; } }
 
