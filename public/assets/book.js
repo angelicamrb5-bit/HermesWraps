@@ -10,7 +10,7 @@
   var form = $('#consultForm'), done = $('#formDone'), alertBox = $('#formAlert');
   if (!form) return;
 
-  var TYPES = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl' };
+  var TYPES = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts' };
   var fromUrl = new URLSearchParams(location.search).get('type');
   if (fromUrl && TYPES[fromUrl]) form.elements.type.value = fromUrl;
 
