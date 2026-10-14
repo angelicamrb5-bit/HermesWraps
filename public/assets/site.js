@@ -89,6 +89,13 @@
     }
   }
 
+  /* Header CTA steps back while the hero (with its own CTA) is on screen */
+  var heroEl = $('#hero');
+  if (heroEl && 'IntersectionObserver' in window) {
+    document.body.classList.add('hero-in-view');
+    new IntersectionObserver(function (en) { document.body.classList.toggle('hero-in-view', en[0].isIntersecting); }, { threshold: 0.35 }).observe(heroEl);
+  }
+
   /* Sticky mobile CTA: after the hero, hidden near the closing band */
   var sticky = $('#stickyCta');
   if (sticky && 'IntersectionObserver' in window) {

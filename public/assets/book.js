@@ -1,6 +1,7 @@
 /* Consultation form: validates, then sends the request straight to the business inbox
-   (POST /api/consult, see worker/). If that fails, or the visitor picks WhatsApp,
-   it opens WhatsApp or email with the request ready to send. */
+   (POST /api/consult, see worker/). If the visitor picks WhatsApp, it opens WhatsApp with
+   the request written out. If the direct send fails, it says so and lets the visitor send
+   the same request by email or WhatsApp, or copy it. */
 (function () {
   'use strict';
   var WHATSAPP = '18134751311';
@@ -10,13 +11,14 @@
   var form = $('#consultForm'), done = $('#formDone'), alertBox = $('#formAlert');
   if (!form) return;
 
-  var TYPES = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts', vinyl: 'Other vinyl' };
+  var TYPES = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts' };
   var fromUrl = new URLSearchParams(location.search).get('type');
   if (fromUrl && TYPES[fromUrl]) form.elements.type.value = fromUrl;
 
   var ERRORS = {
     name: 'Enter your name.',
     email: 'Enter an email address so we can send your consultation details.',
+    emailFormat: 'Check the email address. It should look like name@example.com.',
     type: 'Choose a project type.',
     requirements: 'Tell us about the project: the vehicle or space and what you want done.'
   };
@@ -26,10 +28,11 @@
     var err = document.getElementById('e-' + el.id.slice(2));
     if (!err) return true;
     var v = el.value.trim();
-    var ok = !!v && (el.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    var badFormat = !!v && el.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    var ok = !!v && !badFormat;
     el.setAttribute('aria-invalid', String(!ok));
     err.hidden = ok;
-    err.innerHTML = ok ? '' : ICON + '<span>' + ERRORS[el.name] + '</span>';
+    err.innerHTML = ok ? '' : ICON + '<span>' + (badFormat ? ERRORS.emailFormat : ERRORS[el.name]) + '</span>';
     return ok;
   }
 
@@ -57,26 +60,36 @@
 
   var submitBtn = form.querySelector('[data-send="direct"]');
   var submitLabel = submitBtn ? submitBtn.textContent : '';
-  var touch = window.matchMedia && matchMedia('(pointer: coarse)').matches;
+  var aside = $('.book-aside');
+  var current = null;
 
-  function finish(text) {
-    $('#doneText').textContent = text;
+  function openEmail(d) {
+    location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Free consultation request — ' + (d.company || d.name)) + '&body=' + encodeURIComponent(message(d));
+  }
+  function openWhatsApp(d) {
+    var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(message(d));
+    var w = window.open(url, '_blank');
+    if (w) { try { w.opener = null; } catch (err) {} } else { location.href = url; }
+  }
+
+  /* state: 'sent' (in our inbox), 'whatsapp' (visitor chose WhatsApp), 'failed' (direct send failed) */
+  function show(state, d) {
+    var first = d.name.split(' ')[0];
+    var copy = {
+      sent: ['Request sent.', 'Thanks, ' + first + '. Your request is in our inbox. We will reply to ' + d.email + '. You can send brand files and photos by replying to our email or on WhatsApp.'],
+      whatsapp: ['Almost done - press send.', 'Your request is ready in WhatsApp. Press send there so it reaches us.'],
+      failed: ['We couldn\'t send it from here.', 'Your request is written out and ready. Send it by email or WhatsApp instead, or copy it.']
+    }[state];
+    $('#doneTitle').textContent = copy[0];
+    $('#doneText').textContent = copy[1];
+    $('#doneSteps').hidden = state !== 'sent';
+    $('#doneChoose').hidden = state !== 'failed';
+    $('#doneFallback').hidden = state !== 'whatsapp';
+    $('#editAgain').hidden = state === 'sent';
+    if (aside) aside.hidden = state === 'sent';
     form.hidden = true;
     done.hidden = false;
     done.focus();
-  }
-
-  function handOff(mode, d) {
-    var text = message(d);
-    if (mode === 'email') {
-      location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('Free consultation request — ' + (d.company || d.name)) + '&body=' + encodeURIComponent(text);
-      finish('Your request is ready in your email app. Press send there so it reaches us.');
-    } else {
-      var url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(text);
-      var w = window.open(url, '_blank');
-      if (w) { try { w.opener = null; } catch (err) {} } else { location.href = url; }
-      finish('Your request is ready in WhatsApp. Press send there so it reaches us.');
-    }
   }
 
   form.addEventListener('submit', function (e) {
@@ -93,10 +106,11 @@
 
     var d = {};
     Array.prototype.forEach.call(form.elements, function (el) { if (el.name) d[el.name] = el.value.trim(); });
+    current = d;
 
-    if (mode !== 'direct' || !window.fetch) { handOff(mode === 'direct' ? (touch ? 'whatsapp' : 'email') : mode, d); return; }
+    if (mode === 'whatsapp') { openWhatsApp(d); show('whatsapp', d); return; }
+    if (!window.fetch) { show('failed', d); return; }
 
-    /* Direct send; on any failure fall back to WhatsApp (phones) or email (desktop) */
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending…';
     fetch('/api/consult', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(d) })
@@ -105,20 +119,25 @@
       .then(function (res) {
         submitBtn.disabled = false;
         submitBtn.textContent = submitLabel;
-        if (res && res.ok) {
-          $('#doneTitle').textContent = 'Request sent.';
-          $('#doneFallback').hidden = true;
-          $('#editAgain').hidden = true;
-          finish('Thanks, ' + d.name.split(' ')[0] + '. Your request is in our inbox. We will reply to ' + d.email + '. You can send brand files and photos by replying to our email or on WhatsApp.');
-        } else {
-          handOff(touch ? 'whatsapp' : 'email', d);
-        }
+        show(res && res.ok ? 'sent' : 'failed', d);
       });
+  });
+
+  $('#chooseEmail').addEventListener('click', function () { if (current) openEmail(current); });
+  $('#chooseWhatsApp').addEventListener('click', function () { if (current) openWhatsApp(current); });
+  $('#copyRequest').addEventListener('click', function () {
+    var btn = this;
+    if (!current || !navigator.clipboard) return;
+    navigator.clipboard.writeText(message(current)).then(function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy request'; }, 2000);
+    });
   });
 
   $('#editAgain').addEventListener('click', function () {
     done.hidden = true;
     form.hidden = false;
+    if (aside) aside.hidden = false;
     form.elements.name.focus();
   });
 })();
