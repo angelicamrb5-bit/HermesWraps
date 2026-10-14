@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:ital,wght@0,600;0,700;1,600;1,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css?v=958ee3db">
+  <link rel="stylesheet" href="/assets/site.css?v=e4ce38cc">
   <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -123,11 +123,16 @@
           <div class="form-done" id="formDone" tabindex="-1" hidden>
             <h2 id="doneTitle">Almost done - press send.</h2>
             <p id="doneText">Your request is ready in WhatsApp. Press send there so it reaches us.</p>
-            <ol class="explainer stacked">
+            <ol class="explainer stacked" id="doneSteps">
               <li><h3>We review your requirements.</h3><p>Your standards and scope come first.</p></li>
               <li><h3>We contact you.</h3><p>To go over details, photos and files.</p><!-- [CLIENT TO SUPPLY: response time] --></li>
               <li><h3>You get a clear plan and quote.</h3><p>In writing, before anything is scheduled.</p></li>
             </ol>
+            <div class="done-choose" id="doneChoose" hidden>
+              <button class="btn btn-primary" type="button" id="chooseEmail">Send by email</button>
+              <button class="btn btn-secondary" type="button" id="chooseWhatsApp">Send by WhatsApp</button>
+              <button class="alt-send" type="button" id="copyRequest">Copy request</button>
+            </div>
             <p class="muted" id="doneFallback">Didn't open? Call <a href="tel:+18134751311">(813) 475-1311</a>, message <a href="https://wa.me/18134751311" target="_blank" rel="noopener">WhatsApp</a> or email <a href="mailto:hermeswraps@gmail.com">hermeswraps@gmail.com</a>.</p>
             <button class="alt-send" type="button" id="editAgain">Edit my request</button>
           </div>
@@ -166,10 +171,6 @@
         </div>
         <div class="faq">
           <details>
-            <summary>What does the free consultation include?<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg></summary>
-            <div class="answer"><p>You share your requirements, we review your standards and scope, and you get a clear plan and quote in writing.</p></div>
-          </details>
-          <details>
             <summary>What should I send?<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 4l5 5-5 5"/></svg></summary>
             <div class="answer"><p>The year, make and model, clear photos of the outside of the vehicle, your brand files or guidelines, and reference images. For fleets, add the number of vehicles and each model. For signs, the size, location and a photo of the space.</p></div>
           </details>
@@ -196,7 +197,7 @@
     </div>
   </footer>
 
-  <script src="/assets/site.js?v=ec2e2429" defer></script>
-  <script src="/assets/book.js?v=c4c1e1bd" defer></script>
+  <script src="/assets/site.js?v=7f6a770d" defer></script>
+  <script src="/assets/book.js?v=bab3bd59" defer></script>
 </body>
 </html>

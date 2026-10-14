@@ -5,12 +5,15 @@
   var cards = $$('#workGrid .project-card'), filters = $$('.filter');
   var types = document.getElementById('types'), catalog = document.getElementById('catalog');
   var title = document.getElementById('catalogTitle'), status = document.getElementById('filterStatus');
+  var lead = document.getElementById('workLead'), leadAll = lead ? lead.textContent : '';
+  var next = document.getElementById('catalogNext');
   var LABELS = { commercial: 'Business & fleet vehicles', vehicle: 'Personal vehicles', signs: 'Signs & storefronts' };
 
   /* No type chosen: show one sample per type. A type chosen: show only its catalog. */
   function apply(cat, focus) {
     if (!LABELS[cat]) {
       types.hidden = false; catalog.hidden = true;
+      if (lead) lead.textContent = leadAll;
       return;
     }
     var n = 0;
@@ -19,6 +22,9 @@
     if (mid) { mid.hidden = n <= 6; mid.querySelector('a').href = '/book?type=' + cat; }
     filters.forEach(function (f) { f.setAttribute('aria-pressed', String(f.getAttribute('data-filter') === cat)); });
     types.hidden = true; catalog.hidden = false;
+    if (lead) lead.textContent = 'Real Hermes Wraps projects in Tampa Bay. Tap a project to see its photos.';
+    if (next) next.innerHTML = 'More work: ' + Object.keys(LABELS).filter(function (k) { return k !== cat; })
+      .map(function (k) { return '<a href="/work#' + k + '">' + LABELS[k].replace('&', '&amp;') + '</a>'; }).join(' &middot; ');
     title.textContent = LABELS[cat] + ' · ' + n + (n === 1 ? ' project' : ' projects');
     status.textContent = title.textContent;
     if (focus) { title.focus({ preventScroll: true }); catalog.scrollIntoView(); }

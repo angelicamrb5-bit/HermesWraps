@@ -5,12 +5,12 @@ CHEV = '<svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width=
 W = 'work/'
 projects = [
   ("commercial", [W+"cargo-van-construction-side", W+"cargo-van-construction-rear"], "Cargo van | full wrap for a construction company", "FULL WRAP · CARGO VAN", "Black and gold full wrap with logo, phone and QR code.", "Black cargo van with a gold and black construction company wrap"),
-  ("vehicle", ["tucson-pink-front", "tucson-pink-rear"], "Hyundai Tucson | full color change", "FULL COLOR CHANGE · 1 VEHICLE", "Full color change, front to rear.", "Hyundai Tucson after a full pink color-change wrap"),
-  ("vehicle", ["silverado-hood-angle", "silverado-hood-close"], "Chevrolet Silverado | hood wrap", "HOOD WRAP · 1 VEHICLE", "Hood wrap, with a close view of the edges.", "Chevrolet Silverado with a wrapped hood"),
+  ("vehicle", ["tucson-pink-front", "tucson-pink-rear"], "Hyundai Tucson | full color change", "FULL COLOR CHANGE · SUV", "Full color change, front to rear.", "Hyundai Tucson after a full pink color-change wrap"),
+  ("vehicle", ["silverado-hood-angle", "silverado-hood-close"], "Chevrolet Silverado | hood wrap", "PARTIAL WRAP · PICKUP", "Hood wrap, with a close view of the edges.", "Chevrolet Silverado with a wrapped hood"),
   ("commercial", [W+"wrecker-towing-front", W+"wrecker-towing-side"], "Ford F-Series wrecker | towing company wrap", "FULL WRAP · TOW TRUCK", "Bold printed graphics carried across the cab and the wrecker body.", "Ford wrecker tow truck with an orange and white towing company wrap"),
-  ("vehicle", ["corvette-front", "corvette-side"], "Chevrolet Corvette C8 | gloss black roof & mirrors", "PARTIAL WRAP · 1 VEHICLE", "Gloss black roof and mirrors.", "White Chevrolet Corvette C8 with a gloss black roof and mirrors"),
+  ("vehicle", ["corvette-front", "corvette-side"], "Chevrolet Corvette C8 | gloss black roof & mirrors", "PARTIAL WRAP · SPORTS CAR", "Gloss black roof and mirrors.", "White Chevrolet Corvette C8 with a gloss black roof and mirrors"),
   ("commercial", [W+"box-truck-tire-shop-side", W+"box-truck-tire-shop-rear"], "Box truck | full box graphics", "COMMERCIAL GRAPHICS · BOX TRUCK", "Printed graphics on both sides and the rear door of the box.", "Box truck with full printed graphics for a tire shop"),
-  ("commercial", [W+"cybertruck-electric"], "Tesla Cybertruck | matte black with brand graphics", "COMMERCIAL GRAPHICS · 1 VEHICLE", "Matte black finish with the company logo on the doors.", "Matte black Tesla Cybertruck with an electrical company logo on the doors"),
+  ("commercial", [W+"cybertruck-electric"], "Tesla Cybertruck | matte black with brand graphics", "COMMERCIAL GRAPHICS · PICKUP", "Matte black finish with the company logo on the doors.", "Matte black Tesla Cybertruck with an electrical company logo on the doors"),
   ("commercial", [W+"dump-truck-front", W+"dump-truck-rear"], "Dump truck | cab and body graphics", "COMMERCIAL GRAPHICS · DUMP TRUCK", "Logo and phone number matched across the cab and dump body.", "Red dump truck with company logo and phone number graphics"),
   ("signs", [W+"storefront-windows-pet-store", W+"storefront-doors-pet-store"], "Pet store | storefront window & door graphics", "WINDOW GRAPHICS · STOREFRONT", "Full-color printed graphics across the windows and entry doors.", "Pet store storefront with full-color parrot and bird window graphics"),
   ("commercial", [W+"transit-van-hvac-front", W+"transit-van-hvac-rear"], "Ford Transit | heating & cooling van graphics", "COMMERCIAL GRAPHICS · CARGO VAN", "Services, phone numbers and brand partners laid out across the van.", "White Ford Transit van with heating and cooling company graphics"),
@@ -20,21 +20,21 @@ projects = [
   ("commercial", [W+"vacuum-truck-side", W+"vacuum-truck-rear"], "Vacuum truck | tank and cab graphics", "COMMERCIAL GRAPHICS · TANK TRUCK", "Printed graphics applied around the tank and onto the cab.", "Vacuum tank truck with printed graphics on the tank and cab"),
   ("commercial", [W+"isuzu-truck-landscape-side", W+"isuzu-truck-landscape-front"], "Isuzu truck | landscaping company graphics", "COMMERCIAL GRAPHICS · WORK TRUCK", "Yellow cab and body with logo and phone number.", "Yellow Isuzu work truck with landscaping company graphics"),
   ("commercial", [W+"transit-van-mechanical-front", W+"transit-van-mechanical-rear"], "Ford Transit | mechanical services graphics", "COMMERCIAL GRAPHICS · CARGO VAN", "Brand graphics wrapped from the sides around to the rear doors.", "White Ford Transit van with teal and orange mechanical services graphics"),
-  ("commercial", [W+"cybertruck-realty-side", W+"cybertruck-realty-rear"], "Tesla Cybertruck | gold brand accents", "COMMERCIAL GRAPHICS · 1 VEHICLE", "Gold logo and pinstripe accents on a dark finish.", "Dark Tesla Cybertruck with gold logo and pinstripe accents"),
+  ("commercial", [W+"cybertruck-realty-side", W+"cybertruck-realty-rear"], "Tesla Cybertruck | gold brand accents", "COMMERCIAL GRAPHICS · PICKUP", "Gold logo and pinstripe accents on a dark finish.", "Dark Tesla Cybertruck with gold logo and pinstripe accents"),
   ("commercial", [W+"express-van-full-wrap"], "Chevrolet Express | full printed wrap", "FULL WRAP · CARGO VAN", "Purple and gold full wrap with logo and phone number.", "Chevrolet Express van with a purple and gold full printed wrap"),
   ("commercial", [W+"promaster-van-front", W+"promaster-van-side"], "Ram ProMaster | full printed wrap", "FULL WRAP · CARGO VAN", "Black, gold and white graphics with logo and phone number.", "White Ram ProMaster van with black and gold printed wrap"),
   ("commercial", [W+"transit-van-decor"], "Ford Transit | home decor company wrap", "FULL WRAP · CARGO VAN", "Black and green wrap with services and phone number.", "Black Ford Transit van with green home decor company graphics"),
   ("commercial", [W+"transit-van-yellow"], "Ford Transit | yellow brand wrap", "FULL WRAP · CARGO VAN", "Yellow and black wrap with logo, services and phone.", "Ford Transit van with a yellow and black company wrap"),
-  ("commercial", [W+"minivan-cleaning"], "Minivan | cleaning company graphics", "COMMERCIAL GRAPHICS · 1 VEHICLE", "Teal printed wrap with a portrait, logo and phone number.", "Minivan with teal printed graphics for a cleaning company"),
+  ("commercial", [W+"minivan-cleaning"], "Minivan | cleaning company graphics", "COMMERCIAL GRAPHICS · MINIVAN", "Teal printed wrap with a portrait, logo and phone number.", "Minivan with teal printed graphics for a cleaning company"),
   ("commercial", [W+"utility-cart-brand-side", W+"utility-cart-brand-rear"], "Utility cart | brand graphics", "COMMERCIAL GRAPHICS · UTILITY CART", "Logo and web address on the cargo box and body.", "White utility cart with red and black brand graphics on the cargo box"),
   ("signs", [W+"storefront-door-flooring"], "Flooring store | entry door graphics", "DOOR GRAPHICS · STOREFRONT", "Logo, address, hours and contact details on the glass doors.", "Storefront glass doors with a flooring company's logo and contact graphics"),
   ("signs", [W+"display-fridge-desserts-1", W+"display-fridge-desserts-2", W+"display-fridge-desserts-3"], "Display fridges | dessert brand wraps", "APPLIANCE WRAP · 3 UNITS", "Branded wraps on display fridges and freezers in a store.", "Display fridges wrapped with a dessert brand's logo pattern"),
-  ("vehicle", [W+"utv-custom-wrap"], "Off-road UTV | custom graphic wrap", "CUSTOM WRAP · 1 VEHICLE", "Full-color custom graphics across the body panels.", "Off-road UTV with a full-color custom graphic wrap"),
-  ("commercial", ["commercial-suv-side", "commercial-suv-hood"], "Business SUV | printed side & hood graphics", "COMMERCIAL GRAPHICS · 1 VEHICLE", "Logo and web address matched across side and hood.", "Compact SUV with printed commercial side graphics showing the logo, services and phone number"),
-  ("vehicle", ["corolla-roof-angle", "corolla-roof-front"], "Toyota Corolla | gloss black roof", "PARTIAL WRAP · 1 VEHICLE", "Gloss black roof.", "White Toyota Corolla with a gloss black roof wrap"),
-  ("vehicle", ["sedan-roof-black"], "Sedan | gloss black roof", "PARTIAL WRAP · 1 VEHICLE", "Gloss black roof.", "Gloss black roof wrap on a gray sedan"),
+  ("vehicle", [W+"utv-custom-wrap"], "Off-road UTV | custom graphic wrap", "CUSTOM WRAP · UTV", "Full-color custom graphics across the body panels.", "Off-road UTV with a full-color custom graphic wrap"),
+  ("commercial", ["commercial-suv-side", "commercial-suv-hood"], "Business SUV | printed side & hood graphics", "COMMERCIAL GRAPHICS · SUV", "Logo and web address matched across side and hood.", "Compact SUV with printed commercial side graphics showing the logo, services and phone number"),
+  ("vehicle", ["corolla-roof-angle", "corolla-roof-front"], "Toyota Corolla | gloss black roof", "PARTIAL WRAP · SEDAN", "Gloss black roof.", "White Toyota Corolla with a gloss black roof wrap"),
+  ("vehicle", ["sedan-roof-black"], "Sedan | gloss black roof", "PARTIAL WRAP · SEDAN", "Gloss black roof.", "Gloss black roof wrap on a gray sedan"),
   # Silverado: hood story to be confirmed by the client — captions kept neutral
-  ("vehicle", ["bmw-x1-hood-front", "bmw-x1-hood-roof-close"], "BMW X1 | gloss black hood & roof", "PARTIAL WRAP · 1 VEHICLE", "Gloss black hood and roof.", "BMW X1 with a gloss black hood and roof"),
+  ("vehicle", ["bmw-x1-hood-front", "bmw-x1-hood-roof-close"], "BMW X1 | gloss black hood & roof", "PARTIAL WRAP · SUV", "Gloss black hood and roof.", "BMW X1 with a gloss black hood and roof"),
 ]
 from PIL import Image
 ROOT = os.path.join(PUBLIC, 'assets') + '/'
@@ -94,7 +94,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
       <div class="wrap">
         <span class="eyebrow">Selected work</span>
         <h1 id="workTitle">Work measured against our clients' standards.</h1>
-        <p class="lead">Real Hermes Wraps projects in Tampa Bay: business and fleet vehicles, personal vehicles, signs and storefronts. Choose a type of work to open its catalog.</p>
+        <p class="lead" id="workLead">Real Hermes Wraps projects in Tampa Bay: business and fleet vehicles, personal vehicles, signs and storefronts. Choose a type of work to open its catalog.</p>
       </div>
     </section>
 
@@ -118,6 +118,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
 {chr(10).join(cards)}
           <p class="inline-prompt" id="midPrompt">Want one like this? <a href="/book" data-track="cta-work-mid">Book a free consultation.</a></p>
         </div>
+        <p class="catalog-next" id="catalogNext"></p>
         <p class="inline-prompt">Have a standard we should meet? <a href="/book" data-track="cta-work-inline">Book a free consultation.</a></p>
       </div>
     </section>
