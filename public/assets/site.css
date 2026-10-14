@@ -425,6 +425,13 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .stat-arc .stat-cap { position: absolute; bottom: 22%; font-size: var(--hw-text-small); color: var(--hw-text-on-dark-muted); text-align: center; width: 60%; }
 .story p { color: var(--hw-text-on-dark-muted); max-width: 60ch; }
 .story .eyebrow { color: var(--hw-eyebrow-on-dark); }
+/* Services inside the burgundy band, below the story */
+.story-services { margin-top: var(--hw-space-8); padding-top: var(--hw-space-8); border-top: 1px solid var(--hw-border-on-dark); }
+.story .service-card { background: rgba(247, 244, 236, 0.04); border-color: var(--hw-border-on-dark); box-shadow: none; }
+.story .service-card:hover { border-color: var(--hw-gold); box-shadow: none; }
+.story .service-card svg { color: var(--hw-gold-highlight); }
+.story .service-card ul { color: var(--hw-text-on-dark); }
+.story .service-card ul li::marker { color: var(--hw-gold); }
 
 /* ---------- Consultation explainer ---------- */
 .explainer { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--hw-space-5); margin: 0 0 var(--hw-space-6); padding: 0; list-style: none; counter-reset: ex; }
