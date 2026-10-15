@@ -39,11 +39,13 @@ projects = [
 from PIL import Image
 ROOT = os.path.join(PUBLIC, 'assets') + '/'
 def thumb(p):
-    # Card photo: the background-free cutout from scripts/cutouts.py when one exists
-    # (whole vehicle in frame); otherwise the original. The viewer always gets originals.
-    cut = 'cutout/' + p.split('/')[-1]
-    if os.path.exists(ROOT + cut + '-800.jpg'):
-        return cut + '-800.jpg'
+    # Card photo: the retouched original from scripts/enhance.py when one exists, then the
+    # background-free cutout from scripts/cutouts.py; otherwise the original.
+    # The viewer always gets originals.
+    for d in ('edit/', 'cutout/'):
+        alt = d + p.split('/')[-1]
+        if os.path.exists(ROOT + alt + '-800.jpg'):
+            return alt + '-800.jpg'
     return p + ('-800' if p.startswith(W) else '') + '.jpg'
 
 cards = []
