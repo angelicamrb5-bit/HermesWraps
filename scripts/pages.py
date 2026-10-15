@@ -80,7 +80,7 @@ def type_tiles(level='h3'):
 # Home highlights: the three strongest photos, one full wrap, one partial, one business vehicle.
 # They use background-free cutouts from scripts/cutouts.py; the catalog keeps the original photos.
 HIGHLIGHTS = [
-  ("vehicle", "Full color change", "Hyundai Tucson, wrapped front to rear in a new color.", "cutout/tucson-pink-front-800.jpg", "Hyundai Tucson after a full pink color-change wrap"),
+  ("vehicle", "Full color change", "Hyundai Tucson, wrapped front to rear in a new color.", "cutout/tucson-pink-studio-800.jpg", "Side view of a Hyundai Tucson after a full pink color-change wrap"),
   ("vehicle", "Partial wrap", "Chevrolet Silverado with a wrapped hood.", "cutout/silverado-hood-angle-800.jpg", "White Chevrolet Silverado with a black wrapped hood"),
   ("commercial", "Business vehicle", "Cargo van in a black and gold full wrap with logo, phone and QR code.", "cutout/cargo-van-construction-side-800.jpg", "Black cargo van with a gold and black construction company wrap"),
 ]
