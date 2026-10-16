@@ -62,9 +62,14 @@ def responsive(m):
     base = sm.group(1)
     if not (os.path.exists('assets/' + base + '.jpg') and os.path.exists('assets/' + base + '-800.jpg')):
         return tag
-    tag = tag.replace(sm.group(0), f'src="/assets/{base}-800.jpg" srcset="/assets/{base}-800.jpg 800w, /assets/{base}.jpg 1600w" sizes="{SIZES}"')
-    webp(base + '-800'); webp(base)
-    return (f'<picture><source type="image/webp" srcset="/assets/{base}-800.webp 800w, /assets/{base}.webp 1600w" sizes="{SIZES}">'
+    # Optional -1200 step (retouched photos from enhance.py) keeps 3x phones off the 1600w file
+    steps = [('-800', 800)] + ([('-1200', 1200)] if os.path.exists('assets/' + base + '-1200.jpg') else []) + [('', 1600)]
+    def srcset(ext):
+        return ', '.join(f'/assets/{base}{s}.{ext} {w}w' for s, w in steps)
+    tag = tag.replace(sm.group(0), f'src="/assets/{base}-800.jpg" srcset="{srcset("jpg")}" sizes="{SIZES}"')
+    for s, _ in steps:
+        webp(base + s)
+    return (f'<picture><source type="image/webp" srcset="{srcset("webp")}" sizes="{SIZES}">'
             + tag + '</picture>')
 
 
