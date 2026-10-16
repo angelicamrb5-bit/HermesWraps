@@ -65,7 +65,7 @@ for i, (cat, imgs, title, meta, line, alt) in enumerate(projects):
 TYPES = [
   ("commercial", "Business &amp; fleet vehicles", "Vans, box trucks, tow trucks, dump trucks and company cars.", "cutout/cargo-van-construction-side-800.jpg", "Black cargo van with a gold and black construction company wrap"),
   ("vehicle", "Personal vehicles", "Full color changes and partial wraps: roofs, hoods, mirrors and chrome delete.", "cutout/tucson-pink-front-800.jpg", "Hyundai Tucson after a full pink color-change wrap"),
-  ("signs", "Signs &amp; storefronts", "Window, door and in-store graphics for businesses.", W+"storefront-windows-pet-store-800.jpg", "Pet store storefront with full-color window graphics"),
+  ("signs", "Signs &amp; storefronts", "Window, door and in-store graphics for businesses.", "edit/storefront-windows-pet-store-800.jpg", "Pet store storefront with full-color window graphics"),
 ]
 def type_tiles(level='h3'):
     out = []
