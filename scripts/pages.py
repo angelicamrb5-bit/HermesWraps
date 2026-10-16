@@ -175,7 +175,7 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
 
 terms = [
   ("Written quote", "Only the written quote defines the scope of work. Quotes cover exterior surfaces unless stated otherwise. Door jambs, chrome delete and other extras are quoted separately."),
-  ("Deposit &amp; payment", "A deposit reserves the installation date and covers the material order. The balance is due before the vehicle is released. Business accounts receive payment terms in writing."),
+  ("Deposit &amp; payment", "A 50% deposit, paid once the written quote is approved, reserves the installation date and covers the material order. The balance is due before the vehicle is released. Business accounts receive payment terms in writing."),
   ("Vehicle condition", "The paint must be in sound condition. Chips, dents and scratches can show through the film. Existing damage is noted and photographed at drop-off."),
   ("Installation warranty", "Installation defects such as lifting or peeling, reported within the period stated on the quote, are inspected and repaired. Accidents, normal wear and improper care are not covered."),
   ("Care of the film", "Hand wash with pH-neutral soap. Avoid automatic car washes, pressure washing near edges, wax and harsh chemicals on the film."),
