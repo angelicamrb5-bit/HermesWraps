@@ -19,9 +19,10 @@
   });
 
   /* Sticky header shadow */
-  var header = $('#siteHeader');
+  var header = $('#siteHeader'), utility = $('.utility');
   if (header) {
-    var onScroll = function () { header.classList.toggle('is-stuck', window.scrollY > 40); };
+    /* Shadow once the header actually sticks: the utility bar above it is 32px, or 62px when it wraps on phones */
+    var onScroll = function () { header.classList.toggle('is-stuck', window.scrollY > (utility ? utility.offsetHeight : 0)); };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }

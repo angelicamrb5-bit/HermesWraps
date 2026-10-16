@@ -258,6 +258,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 
 @media (max-width: 960px) {
   :root { --hw-header-h: 64px; }
+  .utility .social a { width: 44px; height: 44px; margin-block: -6px; }
   .main-nav { display: none; }
   .menu-btn { display: grid; }
   .utility .area { display: none; }
@@ -490,6 +491,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
   .filters { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--hw-gutter)); padding-inline: var(--hw-gutter); scrollbar-width: none; overscroll-behavior-x: contain; }
   .filters::-webkit-scrollbar { display: none; }
   .filters { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); }
+  .filters.at-end { -webkit-mask-image: none; mask-image: none; }
   .filters li { flex: none; }
   .filter { white-space: nowrap; }
 }

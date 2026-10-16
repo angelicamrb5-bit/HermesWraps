@@ -27,8 +27,9 @@
     var row = active && active.closest('.filters');
     if (row && row.scrollWidth > row.clientWidth) {
       var a = active.getBoundingClientRect(), r = row.getBoundingClientRect();
-      if (a.left < r.left || a.right > r.right) row.scrollLeft += a.left - r.left - 16;
+      if (a.left < r.left || a.right > r.right - r.width * 0.15) row.scrollLeft += a.left - r.left - 16; /* clear of the edge fade */
     }
+    if (row) fade(row);
     if (lead) lead.textContent = 'Real Hermes Wraps projects in Tampa Bay. Tap a project to see its photos.';
     if (next) next.innerHTML = 'More work: ' + Object.keys(LABELS).filter(function (k) { return k !== cat; })
       .map(function (k) { return '<a href="/work#' + k + '">' + LABELS[k].replace('&', '&amp;') + '</a>'; }).join(' &middot; ');
@@ -36,6 +37,10 @@
     status.textContent = title.textContent;
     if (focus) { title.focus({ preventScroll: true }); catalog.scrollIntoView(); }
   }
+  /* The right-edge fade hints at more filters; drop it once the row is scrolled to the end */
+  function fade(row) { row.classList.toggle('at-end', row.scrollLeft >= row.scrollWidth - row.clientWidth - 1); }
+  var filterRow = document.querySelector('.filters');
+  if (filterRow) filterRow.addEventListener('scroll', function () { fade(filterRow); }, { passive: true });
   filters.forEach(function (f) {
     f.addEventListener('click', function () {
       var cat = f.getAttribute('data-filter');
