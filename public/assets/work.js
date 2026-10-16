@@ -22,6 +22,13 @@
     if (mid) { mid.hidden = n <= 6; mid.querySelector('a').href = '/book?type=' + cat; }
     filters.forEach(function (f) { f.setAttribute('aria-pressed', String(f.getAttribute('data-filter') === cat)); });
     types.hidden = true; catalog.hidden = false;
+    /* Phones scroll the filter row sideways: bring the active filter into view */
+    var active = filters.filter(function (f) { return f.getAttribute('data-filter') === cat; })[0];
+    var row = active && active.closest('.filters');
+    if (row && row.scrollWidth > row.clientWidth) {
+      var a = active.getBoundingClientRect(), r = row.getBoundingClientRect();
+      if (a.left < r.left || a.right > r.right) row.scrollLeft += a.left - r.left - 16;
+    }
     if (lead) lead.textContent = 'Real Hermes Wraps projects in Tampa Bay. Tap a project to see its photos.';
     if (next) next.innerHTML = 'More work: ' + Object.keys(LABELS).filter(function (k) { return k !== cat; })
       .map(function (k) { return '<a href="/work#' + k + '">' + LABELS[k].replace('&', '&amp;') + '</a>'; }).join(' &middot; ');
