@@ -116,9 +116,9 @@
     ends.forEach(function (el) { endObs.observe(el); });
   }
 
-  /* Process videos (they have music): one at a time, and they stop when
-     scrolled out of view, so sound never keeps playing in the background */
-  var clips = $$('.video-card video');
+  /* Videos with sound (home before-and-after): the background video pauses while
+     one plays, and they stop when scrolled out of view, so sound never keeps playing */
+  var clips = $$('.story-photo video');
   clips.forEach(function (v) {
     v.addEventListener('play', function () {
       clips.forEach(function (o) { if (o !== v && !o.paused) o.pause(); });
