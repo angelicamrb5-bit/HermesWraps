@@ -80,8 +80,10 @@
       else setState(true);
     }
     /* Save battery: pause while off screen, resume if it was playing */
+    var heroVisible = true;
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (en) {
+        heroVisible = en[0].isIntersecting;
         if (toggle.getAttribute('aria-pressed') === 'true') return;
         if (en[0].isIntersecting) { var q = hv.play(); if (q && q.catch) q.catch(function () {}); }
         else hv.pause();
@@ -125,7 +127,7 @@
       if (hv && !hv.paused) hv.pause();
     });
     v.addEventListener('pause', function () {
-      if (hv && toggle && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !saveData && !clips.some(function (o) { return !o.paused; })) {
+      if (hv && toggle && heroVisible && toggle.getAttribute('aria-pressed') !== 'true' && !reduced && !saveData && !clips.some(function (o) { return !o.paused; })) {
         var q = hv.play(); if (q && q.catch) q.catch(function () {});
       }
     });
