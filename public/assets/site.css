@@ -352,13 +352,8 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 #catalog h2 { margin: var(--hw-space-3) 0 var(--hw-space-5); }
 #catalog .inline-prompt { margin-top: var(--hw-space-7); }
 
-/* Video card */
-.video-card { margin: 0; }
-.video-card video { width: 100%; height: auto; max-height: 640px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--hw-radius-media); background: var(--hw-bg-dark); }
-.video-card figcaption { margin-top: var(--hw-space-3); font-size: var(--hw-text-small); color: var(--hw-text-muted); }
-.video-card figcaption strong { display: block; color: var(--hw-text); font-size: var(--hw-text-body); }
-.video-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--hw-space-5); }
-@media (max-width: 900px) { .video-grid { grid-template-columns: 1fr; max-width: 420px; } }
+/* Social band (work page) */
+.social-links { display: flex; flex-wrap: wrap; gap: var(--hw-space-4); margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Service cards ---------- */
 .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--hw-space-5); }
@@ -583,8 +578,3 @@ fieldset.optional legend { padding: 0 var(--hw-space-2) 0 0; font: 600 var(--hw-
 .terms-list p { margin: 0; }
 .page-top > .wrap > .logo-plate { margin-bottom: var(--hw-space-5); }
 
-/* Phones: keep vertical process videos from filling several screens */
-@media (max-width: 640px) {
-  .video-card video { max-height: 70vh; }
-  .video-card { max-width: 360px; margin-inline: auto; }
-}

@@ -82,7 +82,7 @@ def type_tiles(level='h3'):
 # Home highlights: the three strongest photos, one full wrap, one partial, one business vehicle.
 # They use background-free cutouts from scripts/cutouts.py; the catalog keeps the original photos.
 HIGHLIGHTS = [
-  ("vehicle", "Full color change", "Hyundai Tucson, wrapped front to rear in a new color.", "cutout/tucson-pink-studio-800.jpg", "Side view of a Hyundai Tucson after a full pink color-change wrap"),
+  ("vehicle", "Full color change", "Hyundai Tucson, wrapped front to rear in a new color.", "cutout/tucson-pink-front-800.jpg", "Hyundai Tucson after a full pink color-change wrap"),
   ("vehicle", "Partial wrap", "Chevrolet Silverado with a wrapped hood.", "cutout/silverado-hood-angle-800.jpg", "White Chevrolet Silverado with a black wrapped hood"),
   ("commercial", "Business vehicle", "Cargo van in a black and gold full wrap with logo, phone and QR code.", "cutout/cargo-van-construction-side-800.jpg", "Black cargo van with a gold and black construction company wrap"),
 ]
@@ -132,28 +132,17 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
       </div>
     </section>
 
-    <section class="section bg-alt" id="videos" aria-labelledby="videosTitle">
-      <div class="wrap">
+    <section class="section bg-alt" id="social" aria-labelledby="socialTitle">
+      <div class="wrap social-band">
         <div class="section-head">
           <span class="eyebrow">The process on video</span>
-          <h2 id="videosTitle">See how the work is done.</h2>
-          <p>Every project is filmed from start to finish. Press play on any video.</p>
+          <h2 id="socialTitle">Watch the work on Instagram and TikTok.</h2>
+          <p>Installations, removals and finished vehicles, filmed by Hermes Wraps.</p>
         </div>
-        <div class="video-grid">
-          <figure class="video-card">
-            <video controls playsinline preload="none" poster="/assets/poster-corolla-roof.jpg" aria-describedby="v1"><source src="/assets/process-corolla-roof.mp4" type="video/mp4"></video>
-            <figcaption id="v1"><strong>Toyota Corolla roof · installation</strong>Gloss black film placed, stretched, trimmed and finished on the roof panel.</figcaption>
-          </figure>
-          <figure class="video-card">
-            <video controls playsinline preload="none" poster="/assets/poster-fleet-removal.jpg" aria-describedby="v2"><source src="/assets/process-fleet-removal.mp4" type="video/mp4"></video>
-            <figcaption id="v2"><strong>Fleet vehicle · wrap removal</strong>Old fleet graphics removed cleanly, leaving the factory paint ready for the vehicle's next use.</figcaption>
-          </figure>
-          <figure class="video-card">
-            <video controls playsinline preload="none" poster="/assets/poster-silverado-hood.jpg" aria-describedby="v3"><source src="/assets/process-silverado-hood.mp4" type="video/mp4"></video>
-            <!-- [CLIENT TO SUPPLY: confirm the Silverado hood story (video vs. photos)] -->
-            <figcaption id="v3"><strong>Chevrolet Silverado · hood</strong>Hood wrap installation from start to finish.</figcaption>
-          </figure>
-        </div>
+        <ul class="social-links">
+          <li><a class="btn btn-secondary" href="https://www.instagram.com/hermeswraps/" target="_blank" rel="noopener" data-track="instagram-work">Instagram <span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a class="btn btn-secondary" href="https://www.tiktok.com/@hermeswraps" target="_blank" rel="noopener" data-track="tiktok-work">TikTok <span class="arrow" aria-hidden="true">→</span></a></li>
+        </ul>
       </div>
     </section>
 
@@ -229,7 +218,7 @@ nf_main = '''    <section class="section page-top" aria-labelledby="nfTitle">
 '''
 
 page('work.html', 'Our Work: Vehicle Wraps &amp; Commercial Graphics in Tampa Bay | Hermes Wraps',
-     'Hermes Wraps projects in Tampa Bay, labeled by vehicle, finish and service: commercial graphics, partial wraps, color changes and process videos.',
+     'Hermes Wraps projects in Tampa Bay, labeled by vehicle, finish and service: commercial graphics, partial wraps and color changes.',
      '/work', work_main, '  <script src="/assets/work.js" defer></script>')
 page('terms.html', 'Terms of Service &amp; Privacy | Hermes Wraps',
      'Hermes Wraps terms of service: written quotes, deposits, vehicle condition, installation warranty, film care, timelines and privacy.',
