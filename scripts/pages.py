@@ -133,15 +133,15 @@ work_main = f'''    <section class="page-hero page-top" aria-labelledby="workTit
     </section>
 
     <section class="section bg-alt" id="social" aria-labelledby="socialTitle">
-      <div class="wrap social-band">
+      <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">The process on video</span>
           <h2 id="socialTitle">Watch the work on Instagram and TikTok.</h2>
           <p>Installations, removals and finished vehicles, filmed by Hermes Wraps.</p>
         </div>
         <ul class="social-links">
-          <li><a class="btn btn-secondary" href="https://www.instagram.com/hermeswraps/" target="_blank" rel="noopener" data-track="instagram-work">Instagram <span class="arrow" aria-hidden="true">→</span></a></li>
-          <li><a class="btn btn-secondary" href="https://www.tiktok.com/@hermeswraps" target="_blank" rel="noopener" data-track="tiktok-work">TikTok <span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a class="btn btn-secondary" href="https://www.instagram.com/hermeswraps/" target="_blank" rel="noopener" data-track="instagram-work">Instagram<span class="sr-only"> (opens in a new tab)</span> <span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a class="btn btn-secondary" href="https://www.tiktok.com/@hermeswraps" target="_blank" rel="noopener" data-track="tiktok-work">TikTok<span class="sr-only"> (opens in a new tab)</span> <span class="arrow" aria-hidden="true">→</span></a></li>
         </ul>
       </div>
     </section>

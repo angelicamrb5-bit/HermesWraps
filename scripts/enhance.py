@@ -36,6 +36,12 @@ EDITS = {
   'work/vacuum-truck-side':           dict(top=0.5, centre=(0.50, 0.55), radii=(0.58, 0.42)),
   'work/isuzu-truck-landscape-side':  dict(top=0.5, centre=(0.52, 0.50), radii=(0.55, 0.42)),
   'work/express-van-full-wrap':       dict(top=0.5, centre=(0.55, 0.58), radii=(0.55, 0.42)),
+  'work/promaster-van-front':         dict(top=0.5, centre=(0.40, 0.45), radii=(0.52, 0.45)),
+  'work/transit-van-decor':           dict(top=0.79, centre=(0.55, 0.52), radii=(0.58, 0.45)),
+  'work/transit-van-yellow':          dict(top=0.5, centre=(0.55, 0.45), radii=(0.55, 0.42)),
+  'work/minivan-cleaning':            dict(top=0.5, centre=(0.40, 0.60), radii=(0.58, 0.40)),
+  'work/utility-cart-brand-side':     dict(top=0.5, centre=(0.50, 0.55), radii=(0.52, 0.45)),
+  'commercial-suv-side':              dict(top=0.5, centre=(0.55, 0.62), radii=(0.58, 0.40)),
 }
 
 LIFT = 0.12      # centre brightening (midtones)
