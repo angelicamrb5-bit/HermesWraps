@@ -30,6 +30,12 @@ EDITS = {
   'work/wrecker-towing-front':        dict(top=0.5, centre=(0.52, 0.55), radii=(0.55, 0.45)),
   'work/box-truck-tire-shop-side':    dict(top=0.5, centre=(0.48, 0.50), radii=(0.50, 0.45)),
   'work/dump-truck-front':            dict(top=0.5, centre=(0.48, 0.55), radii=(0.58, 0.45)),
+  'corvette-front':                   dict(top=0.5, centre=(0.45, 0.50), radii=(0.55, 0.45)),
+  'work/wrecker-junk-cars-front':     dict(top=0.5, centre=(0.52, 0.48), radii=(0.55, 0.42)),
+  'work/express-van-electrical-side': dict(top=0.5, centre=(0.55, 0.42), radii=(0.55, 0.42)),
+  'work/vacuum-truck-side':           dict(top=0.5, centre=(0.50, 0.55), radii=(0.58, 0.42)),
+  'work/isuzu-truck-landscape-side':  dict(top=0.5, centre=(0.52, 0.50), radii=(0.55, 0.42)),
+  'work/express-van-full-wrap':       dict(top=0.5, centre=(0.55, 0.58), radii=(0.55, 0.42)),
 }
 
 LIFT = 0.12      # centre brightening (midtones)
@@ -77,7 +83,8 @@ def run(name):
     im = im.filter(ImageFilter.UnsharpMask(radius=24, percent=10, threshold=0))
     base = os.path.join(OUT, name.split('/')[-1])
     os.makedirs(OUT, exist_ok=True)
-    for size, suffix in ((1600, ''), (800, '-800')):
+    # 1200w serves 3x phones (a full-width card is ~1030px there) at about half the 1600w weight
+    for size, suffix in ((1600, ''), (1200, '-1200'), (800, '-800')):
         out = im.resize((size, size * 3 // 4), Image.LANCZOS)
         out = out.filter(ImageFilter.UnsharpMask(radius=1.0, percent=35 if size == 800 else 25, threshold=3))
         out.save(base + suffix + '.jpg', quality=85, optimize=True, progressive=True)
