@@ -4,7 +4,8 @@ The client asked for the real photos back, with simple edits that make the wrap
 graphics stand out: a brighter centre on the vehicle, deeper shadows around the
 edges, a little more contrast and crisp lettering. Nothing is added or removed.
 
-Source: full-resolution originals on Drive (map in cutout_sources.json).
+Source: full-resolution originals on Drive (map in cutout_sources.json); photos with no
+Drive original (the storefront and fridge shots) use the site's own 1600px file.
 Output: public/assets/edit/<name>.jpg (1600 wide) and <name>-800.jpg, 4:3.
 pages.py thumb() uses these for the catalog cards when they exist.
 
@@ -42,6 +43,18 @@ EDITS = {
   'work/minivan-cleaning':            dict(top=0.5, centre=(0.40, 0.60), radii=(0.58, 0.40)),
   'work/utility-cart-brand-side':     dict(top=0.5, centre=(0.50, 0.55), radii=(0.52, 0.45)),
   'commercial-suv-side':              dict(top=0.5, centre=(0.55, 0.62), radii=(0.58, 0.40)),
+  'work/cybertruck-electric':         dict(top=0.5, centre=(0.45, 0.50), radii=(0.55, 0.45)),
+  'work/storefront-windows-pet-store': dict(top=0.5, centre=(0.50, 0.45), radii=(0.62, 0.48)),
+  'work/transit-van-hvac-front':      dict(top=0.5, centre=(0.60, 0.50), radii=(0.55, 0.45)),
+  'work/promaster-van-electric':      dict(top=0.69, centre=(0.60, 0.50), radii=(0.55, 0.48)),
+  'work/transit-van-mechanical-front': dict(top=0.5, centre=(0.45, 0.55), radii=(0.55, 0.45)),
+  'work/cybertruck-realty-side':      dict(top=0.5, centre=(0.60, 0.55), radii=(0.52, 0.42)),
+  'work/storefront-door-flooring':    dict(top=0.39, centre=(0.50, 0.50), radii=(0.60, 0.50)),
+  'work/display-fridge-desserts-1':   dict(top=0.5, centre=(0.50, 0.50), radii=(0.55, 0.50)),
+  'work/utv-custom-wrap':             dict(top=0.5, centre=(0.45, 0.55), radii=(0.58, 0.45)),
+  'corolla-roof-angle':               dict(top=0.55, centre=(0.55, 0.55), radii=(0.55, 0.45)),
+  'sedan-roof-black':                 dict(top=0.75, centre=(0.50, 0.50), radii=(0.58, 0.45)),
+  'bmw-x1-hood-front':                dict(top=0.95, centre=(0.50, 0.50), radii=(0.55, 0.48)),
 }
 
 LIFT = 0.12      # centre brightening (midtones)
@@ -81,7 +94,8 @@ def retouch(im, centre, radii):
 
 def run(name):
     cfg = EDITS[name]
-    im = ImageOps.exif_transpose(Image.open(DRIVE + SOURCES[name])).convert('RGB')
+    path = DRIVE + SOURCES[name] if name in SOURCES else os.path.join(HERE, '..', 'public', 'assets', name + '.jpg')
+    im = ImageOps.exif_transpose(Image.open(path)).convert('RGB')
     im = crop43(im, cfg['top'])
     im = im.resize((2400, 1800), Image.LANCZOS)
     im = retouch(im, cfg['centre'], cfg['radii'])
