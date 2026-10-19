@@ -27,7 +27,8 @@ SOURCES = json.load(open(os.path.join(HERE, 'cutout_sources.json')))
 EDITS = {
   'work/cargo-van-construction-side': dict(top=0.5, centre=(0.52, 0.52), radii=(0.48, 0.42)),
   'tucson-pink-front':                dict(top=0.50, centre=(0.50, 0.55), radii=(0.55, 0.42)),
-  'silverado-hood-angle':             dict(top=0.50, centre=(0.52, 0.55), radii=(0.50, 0.45)),
+  'work/challenger-bee-side':         dict(top=0.5, centre=(0.50, 0.42), radii=(0.60, 0.36)),
+  'silverado-hood-angle':            dict(top=0.50, centre=(0.52, 0.55), radii=(0.50, 0.45)),
   'work/wrecker-towing-front':        dict(top=0.5, centre=(0.52, 0.55), radii=(0.55, 0.45)),
   'work/box-truck-tire-shop-side':    dict(top=0.5, centre=(0.48, 0.50), radii=(0.50, 0.45)),
   'work/dump-truck-front':            dict(top=0.5, centre=(0.48, 0.55), radii=(0.58, 0.45)),
