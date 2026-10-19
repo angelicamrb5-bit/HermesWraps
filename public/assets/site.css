@@ -398,7 +398,7 @@ h4 { font: 600 var(--hw-text-h4)/1.4 var(--hw-font-body); }
 .stat-arc .stat-cap { position: absolute; bottom: 22%; font-size: var(--hw-text-small); color: var(--hw-text-on-dark-muted); text-align: center; width: 60%; }
 .story p { color: var(--hw-text-on-dark-muted); max-width: 60ch; }
 .story-grid > div > p { font-size: var(--hw-text-lead); line-height: 1.6; color: var(--hw-text-on-dark); max-width: 34em; }
-.story-grid > div > p.story-location { margin-top: var(--hw-space-5); padding-top: var(--hw-space-5); border-top: 1px solid var(--hw-border-on-dark); font-size: var(--hw-text-body); color: var(--hw-text-on-dark-muted); }
+.story-grid > div > p.story-location { margin-top: var(--hw-space-5); padding-top: var(--hw-space-5); border-top: 1px solid var(--hw-border-on-dark); font-size: var(--hw-text-body); color: var(--hw-text-on-dark-muted); max-width: calc(34 * var(--hw-text-lead)); /* rule spans the lead's width */ }
 .story-location .mono { display: block; margin-bottom: var(--hw-space-1); color: var(--hw-eyebrow-on-dark); letter-spacing: 0.08em; }
 .story .eyebrow { color: var(--hw-eyebrow-on-dark); }
 /* Services inside the burgundy band, below the story */
