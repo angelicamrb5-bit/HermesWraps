@@ -18,6 +18,10 @@ El original de Muse está guardado sin cambios en el commit `144b4e9` ("Add orig
 3. **Custom domains** → `hermeswraps.com` y `www.hermeswraps.com` (redirigir www a la versión sin www con una regla de redirección).
 4. Activa **Web Analytics** (sin cookies) para el dominio.
 
+## Claude Code: skills y estrategia de marketing
+
+Las skills de marca (`hermes-wraps`, `quality-insurance`) y de marketing están en `.claude/skills/`, y la ficha del negocio en `.agents/product-marketing.md`. Abre el repo con Claude Code y se cargan solas. `CLAUDE.md` explica cuál usar en cada caso.
+
 ## Datos de contacto
 
 Teléfono y WhatsApp: +1 813 475 1311 · Correo: hermeswraps@gmail.com (cambiar por el correo del dominio cuando exista; buscar `hermeswraps@gmail.com` en `public/`).

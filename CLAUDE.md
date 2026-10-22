@@ -2,6 +2,16 @@
 
 Sitio en `public/`, worker en `worker/`, despliegue con `wrangler.jsonc`.
 
+## Skills del proyecto
+
+Todo vive en el repo, así que cualquier editor con Claude Code las tiene al abrirlo:
+
+- `.claude/skills/hermes-wraps/` — marca y diseño (fuente de verdad: tokens, voz, componentes, guía de color).
+- `.claude/skills/quality-insurance/` — revisión de que el trabajo no se aparte de la marca.
+- `.claude/skills/<resto>/` — skills de marketing de coreyhaines31/marketingskills (`skills-lock.json` registra la versión; `npx skills update -p` las actualiza).
+- `.claude/agents/impeccable-qa.md` — agente de QA del sitio.
+- `.agents/product-marketing.md` — ficha base del negocio que leen las skills de marketing. Actualízala con la skill `product-marketing`.
+
 ## Qué skill usar (marketing, web y redes)
 
 Ante cualquier pedido de marketing, recomienda la skill antes de empezar y explica en una frase por qué, sobre todo si conviene más que las propias del cliente.

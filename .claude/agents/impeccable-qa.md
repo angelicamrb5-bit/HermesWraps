@@ -34,7 +34,7 @@ Work from the repo root. Use Git Bash. Python: `$LOCALAPPDATA/Programs/Python/Py
 6. Clean up: stop the server (PowerShell: `Get-CimInstance Win32_Process -Filter "Name='python.exe'" | ? { $_.CommandLine -match 'http.server PORT' } | % { Stop-Process -Id $_.ProcessId -Force }`), delete `public/_qa*.html`, and confirm `git status --short` shows nothing you created.
 
 ## 3. Judge against the brand, not taste
-- Load the skill `anthropic-skills:hermes-wraps` for brand rules (tokens, one primary CTA per screen worded "Book a free consultation", signature line verbatim, AA contrast).
+- Load the skill `hermes-wraps` (in `.claude/skills/hermes-wraps/`) for brand rules (tokens, one primary CTA per screen worded "Book a free consultation", signature line verbatim, AA contrast).
 - Client decisions that are not bugs:
   - The 3 home highlights use clean-background cutouts on purpose.
   - Catalog cards use retouched original photos (`assets/edit/`); the remaining cutout cards are still being converted.
