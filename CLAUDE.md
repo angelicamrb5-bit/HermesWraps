@@ -9,7 +9,9 @@ Todo vive en el repo, así que cualquier editor con Claude Code las tiene al abr
 - `.claude/skills/hermes-wraps/` — marca y diseño (fuente de verdad: tokens, voz, componentes, guía de color).
 - `.claude/skills/quality-insurance/` — revisión de que el trabajo no se aparte de la marca.
 - `.claude/skills/<resto>/` — skills de marketing de coreyhaines31/marketingskills (`skills-lock.json` registra la versión; `npx skills update -p` las actualiza).
+- `.claude/skills/grill-me`, `grilling`, `teach`, `handoff`, `to-questionnaire`, `research` — skills de trabajo de mattpocock/skills (misma actualización con `npx skills update -p`).
 - `.claude/agents/impeccable-qa.md` — agente de QA del sitio.
+- `.claude/agents/researcher.md` — investigador general: aplica la skill `research` y guarda lo que encuentra en `docs/research/`.
 - `.agents/product-marketing.md` — ficha base del negocio que leen las skills de marketing. Actualízala con la skill `product-marketing`.
 
 ## Qué skill usar (marketing, web y redes)
@@ -46,5 +48,19 @@ Reglas:
 | Promociones, garantías, paquetes | `offers`, `pricing` |
 | Competencia | `competitors`, `competitor-profiling` |
 | Prensa, eventos, alianzas | `public-relations`, `events`, `co-marketing` |
+
+## Skills de trabajo (mattpocock/skills)
+
+No deciden marketing ni marca; ayudan a pensar, investigar y pasar el trabajo.
+
+| Pedido | Skill |
+|---|---|
+| Poner a prueba un plan antes de ejecutarlo (por ejemplo, el de `marketing-plan`) | `/grill-me` |
+| Aprender un tema en varias sesiones | `/teach` |
+| Preguntas que solo puede contestar el cliente u otra persona | `/to-questionnaire` (guárdalo en `docs/`) |
+| Dejar el trabajo listo para el otro editor | `/handoff` (en sesiones en la nube, `/tmp` se borra: guárdalo en `docs/handoffs/` y súbelo) |
+| Investigar mercado, competencia, plataformas, normas o herramientas | `research` |
+
+Investigación: cualquier encargo de investigar se delega al agente `researcher`, no a un agente `general-purpose`. Si hace falta un agente genérico, que siga `.claude/skills/research/SKILL.md`: fuentes primarias, una cita por afirmación y el resultado en `docs/research/`.
 
 Las de SaaS (`paywalls`, `signup`, `onboarding`, `churn-prevention`, `aso`, `free-tools`, `revops`) no aplican a un taller de vinilo; no las recomiendes salvo que el pedido lo justifique.
