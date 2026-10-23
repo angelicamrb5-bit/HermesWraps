@@ -10,6 +10,7 @@ Todo vive en el repo, así que cualquier editor con Claude Code las tiene al abr
 - `.claude/skills/quality-insurance/` — revisión de que el trabajo no se aparte de la marca.
 - `.claude/skills/<resto>/` — skills de marketing de coreyhaines31/marketingskills (`skills-lock.json` registra la versión; `npx skills update -p` las actualiza).
 - `.claude/skills/grill-me`, `grilling`, `teach`, `handoff`, `to-questionnaire`, `research` — skills de trabajo de mattpocock/skills (misma actualización con `npx skills update -p`).
+- `.claude/skills/plan-optimizacion/` — aplica el plan de `docs/plan-optimizacion-web.md` (`/plan-optimizacion`), una fase por sesión; lo que depende de Hermes está en `docs/pendientes-del-cliente.md`.
 - `.claude/agents/impeccable-qa.md` — agente de QA del sitio.
 - `.claude/agents/matt-researcher.md` — investigador de hechos: aplica la skill `research` y guarda lo que encuentra en `docs/research/`.
 - `.agents/product-marketing.md` — ficha base del negocio que leen las skills de marketing. Actualízala con la skill `product-marketing`.
