@@ -1,3 +1,3 @@
 # Investigaciones
 
-Notas del agente `researcher` (`.claude/agents/researcher.md`). Un archivo por tema: `YYYY-MM-DD-<tema>.md`, con una fuente citada por afirmación.
+Notas del agente `matt-researcher` (`.claude/agents/matt-researcher.md`). Un archivo por tema: `YYYY-MM-DD-<tema>.md`, con una fuente citada por afirmación.
