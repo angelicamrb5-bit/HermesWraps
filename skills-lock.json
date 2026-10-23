@@ -265,6 +265,12 @@
       "skillPath": "skills/prospecting/SKILL.md",
       "computedHash": "6e53e93c68e6f1b19f79549ca504ee69dded349337d36a935297b95aca257052"
     },
+    "prototype": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/prototype/SKILL.md",
+      "computedHash": "d3fc74689bd993e39c44bfae510d014eecffbeec2922764b065377fd1327c0f6"
+    },
     "public-relations": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",
@@ -348,6 +354,12 @@
       "sourceType": "github",
       "skillPath": "skills/video/SKILL.md",
       "computedHash": "9755cc816fc5c05e382fb551d76158060fd89ee2b3105a73d2c8165e3e6bd9e1"
+    },
+    "wayfinder": {
+      "source": "mattpocock/skills",
+      "sourceType": "github",
+      "skillPath": "skills/engineering/wayfinder/SKILL.md",
+      "computedHash": "71d1296ae9f1ea0397f385f72d11ca3473827f5d067df4d06c58eb03377a57ce"
     }
   }
 }

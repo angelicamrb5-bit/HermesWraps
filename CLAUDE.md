@@ -60,6 +60,8 @@ No deciden marketing ni marca; ayudan a pensar, investigar y pasar el trabajo.
 | Preguntas que solo puede contestar el cliente u otra persona | `/to-questionnaire` (guárdalo en `docs/`) |
 | Dejar el trabajo listo para el otro editor | `/handoff` (en sesiones en la nube, `/tmp` se borra: guárdalo en `docs/handoffs/` y súbelo) |
 | Investigar mercado, competencia, plataformas, normas o herramientas | `research` |
+| Un trabajo grande que no cabe en una sesión (rediseño del sitio, plan de 12 meses): convertirlo en un mapa de decisiones y resolverlas una a una | `/wayfinder` (sin gestor de tickets configurado usa archivos Markdown locales) |
+| Probar una idea antes de construirla (varias versiones de una sección de la web, o una lógica como el flujo de cotización) | `prototype` + `hermes-wraps` (las variantes visuales siguen la marca; nada de eso se queda en `public/` sin pasar por `quality-insurance`) |
 
 Investigación: cualquier encargo de investigar se delega al agente `researcher`, no a un agente `general-purpose`. Si hace falta un agente genérico, que siga `.claude/skills/research/SKILL.md`: fuentes primarias, una cita por afirmación y el resultado en `docs/research/`.
 
