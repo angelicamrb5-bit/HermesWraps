@@ -9,7 +9,9 @@ Todo vive en el repo, así que cualquier editor con Claude Code las tiene al abr
 - `.claude/skills/hermes-wraps/` — marca y diseño (fuente de verdad: tokens, voz, componentes, guía de color).
 - `.claude/skills/quality-insurance/` — revisión de que el trabajo no se aparte de la marca.
 - `.claude/skills/<resto>/` — skills de marketing de coreyhaines31/marketingskills (`skills-lock.json` registra la versión; `npx skills update -p` las actualiza).
+- `.claude/skills/grill-me`, `grilling`, `teach`, `handoff`, `to-questionnaire`, `research` — skills de trabajo de mattpocock/skills (misma actualización con `npx skills update -p`).
 - `.claude/agents/impeccable-qa.md` — agente de QA del sitio.
+- `.claude/agents/matt-researcher.md` — investigador de hechos: aplica la skill `research` y guarda lo que encuentra en `docs/research/`.
 - `.agents/product-marketing.md` — ficha base del negocio que leen las skills de marketing. Actualízala con la skill `product-marketing`.
 
 ## Qué skill usar (marketing, web y redes)
@@ -46,5 +48,35 @@ Reglas:
 | Promociones, garantías, paquetes | `offers`, `pricing` |
 | Competencia | `competitors`, `competitor-profiling` |
 | Prensa, eventos, alianzas | `public-relations`, `events`, `co-marketing` |
+
+## Skills de trabajo (mattpocock/skills)
+
+No deciden marketing ni marca; ayudan a pensar, investigar y pasar el trabajo.
+
+| Pedido | Skill |
+|---|---|
+| Poner a prueba un plan antes de ejecutarlo (por ejemplo, el de `marketing-plan`) | `/grill-me` |
+| Aprender un tema en varias sesiones | `/teach` |
+| Preguntas que solo puede contestar el cliente u otra persona | `/to-questionnaire` (guárdalo en `docs/`) |
+| Dejar el trabajo listo para el otro editor | `/handoff` (en sesiones en la nube, `/tmp` se borra: guárdalo en `docs/handoffs/` y súbelo) |
+| Investigar mercado, competencia, plataformas, normas o herramientas | `research` |
+| Un trabajo grande que no cabe en una sesión (rediseño del sitio, plan de 12 meses): convertirlo en un mapa de decisiones y resolverlas una a una | `/wayfinder` (sin gestor de tickets configurado usa archivos Markdown locales) |
+| Probar una idea antes de construirla (varias versiones de una sección de la web, o una lógica como el flujo de cotización) | `prototype` + `hermes-wraps` (las variantes visuales siguen la marca; nada de eso se queda en `public/` sin pasar por `quality-insurance`) |
+
+### Qué tipo de investigación es
+
+Antes de investigar, clasifica el pedido y usa la herramienta que le toca. Si el pedido mezcla tipos, sepáralo y dilo.
+
+| Tipo de pregunta | Herramienta |
+|---|---|
+| Un hecho con fuente verificable: reglas de una plataforma (Meta, Google Business), normas (rotulación, vehículos comerciales en Florida), cómo funciona una herramienta o API, datos públicos del mercado | agente `matt-researcher` (en segundo plano; resultado en `docs/research/`) |
+| Perfilar competidores concretos a partir de sus URLs | `competitor-profiling` (comparativas: `competitors`) |
+| Qué piensan y dicen los clientes: reseñas, entrevistas, mensajes, encuestas | `customer-research` |
+| Estado del propio sitio: SEO, velocidad, conversión | `seo-audit`, `cro`, agente `impeccable-qa` |
+| Ideas o inspiración visual | `hermes-wraps` (`inspiration/`) |
+| Cómo está hecho este repo | agente `Explore` |
+| Una decisión que depende del cliente | `/to-questionnaire` |
+
+Los encargos de hechos se delegan a `matt-researcher`, no a un agente `general-purpose`. Si hace falta un agente genérico, que siga `.claude/skills/research/SKILL.md`: fuentes primarias, una cita por afirmación y el resultado en `docs/research/`.
 
 Las de SaaS (`paywalls`, `signup`, `onboarding`, `churn-prevention`, `aso`, `free-tools`, `revops`) no aplican a un taller de vinilo; no las recomiendes salvo que el pedido lo justifique.

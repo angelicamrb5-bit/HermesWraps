@@ -20,7 +20,7 @@ El original de Muse está guardado sin cambios en el commit `144b4e9` ("Add orig
 
 ## Claude Code: skills y estrategia de marketing
 
-Las skills de marca (`hermes-wraps`, `quality-insurance`) y de marketing están en `.claude/skills/`, y la ficha del negocio en `.agents/product-marketing.md`. Abre el repo con Claude Code y se cargan solas. `CLAUDE.md` explica cuál usar en cada caso.
+Las skills de marca (`hermes-wraps`, `quality-insurance`) y de marketing están en `.claude/skills/`, y la ficha del negocio en `.agents/product-marketing.md`. Abre el repo con Claude Code y se cargan solas. `CLAUDE.md` explica cuál usar en cada caso. También hay skills de trabajo de mattpocock/skills (`/grill-me`, `/teach`, `/handoff`, `/to-questionnaire`, `/wayfinder`, `prototype`, `research`) y un agente investigador (`.claude/agents/matt-researcher.md`) que guarda sus hallazgos en `docs/research/`.
 
 ## Datos de contacto
 
