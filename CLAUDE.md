@@ -11,6 +11,7 @@ Todo vive en el repo, así que cualquier editor con Claude Code las tiene al abr
 - `.claude/skills/<resto>/` — skills de marketing de coreyhaines31/marketingskills (`skills-lock.json` registra la versión; `npx skills update -p` las actualiza).
 - `.claude/skills/grill-me`, `grilling`, `teach`, `handoff`, `to-questionnaire`, `research` — skills de trabajo de mattpocock/skills (misma actualización con `npx skills update -p`).
 - `.claude/skills/frontend-ui-engineering`, `performance-optimization`, `security-and-hardening` y el resto de addyosmani/agent-skills (lista en `skills-lock.json`) — skills de ingeniería; sus checklists compartidas están en `.claude/references/` (misma actualización con `npx skills update -p`; esa carpeta se copia a mano desde el repo de origen).
+- `.claude/agents/web-performance-auditor.md`, `code-reviewer.md`, `security-auditor.md`, `test-engineer.md` — agentes de addyosmani/agent-skills que usan `/webperf` y `/ship`.
 - `.claude/agents/impeccable-qa.md` — agente de QA del sitio.
 - `.claude/agents/matt-researcher.md` — investigador de hechos: aplica la skill `research` y guarda lo que encuentra en `docs/research/`.
 - `.agents/product-marketing.md` — ficha base del negocio que leen las skills de marketing. Actualízala con la skill `product-marketing`.
@@ -94,7 +95,19 @@ Deciden cómo se construye y se revisa el código del sitio (`public/`) y del wo
 | Revisar un cambio antes de fusionarlo | `code-review-and-quality` (y después `quality-insurance` si toca `public/`) |
 | Antes de publicar en producción | `shipping-and-launch` |
 | Documentar una decisión técnica | `documentation-and-adrs` |
-| Probar en el navegador real | `browser-testing-with-devtools` (necesita el MCP de Chrome DevTools) |
+| Probar en el navegador real | `browser-testing-with-devtools` (usa el MCP `chrome-devtools`) |
+
+Comandos (`.claude/commands/`, adaptados del mismo repo):
+
+| Comando | Qué hace |
+|---|---|
+| `/webperf` | Auditoría de velocidad con el agente `web-performance-auditor`. Con el MCP `chrome-devtools` mide de verdad (Lighthouse, trazas); sin él revisa el código |
+| `/ship` | Antes de publicar: `code-reviewer`, `security-auditor` y `test-engineer` en paralelo, y una decisión de publicar o no con plan de vuelta atrás |
+| `/review-code` | Revisión de un cambio en cinco ejes (renombrado para no chocar con `/review`) |
+| `/code-simplify` | Simplificar código sin cambiar lo que hace |
+| `/spec`, `/planning`, `/build`, `/test` | Definir, partir en tareas, construir por pasos y probar (`/planning` renombrado para no chocar con `/plan`) |
+
+MCP de Chrome DevTools (`.mcp.json`, lo lanza `scripts/chrome-devtools-mcp.mjs`): abre un Chrome sin ventana y con perfil temporal para medir, hacer capturas y leer la consola. En un ordenador usa el Chrome instalado (hace falta Chrome y Node); en la nube usa el Chromium del contenedor. Claude Code pide aprobarlo la primera vez que se abre el repo. Para probar el sitio en local: `cd public && python3 -m http.server 8765` y abrir `http://localhost:8765/`.
 
 Reglas:
 
