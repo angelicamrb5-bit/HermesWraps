@@ -10,6 +10,7 @@ Todo vive en el repo, así que cualquier editor con Claude Code las tiene al abr
 - `.claude/skills/quality-insurance/` — revisión de que el trabajo no se aparte de la marca.
 - `.claude/skills/<resto>/` — skills de marketing de coreyhaines31/marketingskills (`skills-lock.json` registra la versión; `npx skills update -p` las actualiza).
 - `.claude/skills/grill-me`, `grilling`, `teach`, `handoff`, `to-questionnaire`, `research` — skills de trabajo de mattpocock/skills (misma actualización con `npx skills update -p`).
+- `.claude/skills/frontend-ui-engineering`, `performance-optimization`, `security-and-hardening` y el resto de addyosmani/agent-skills (lista en `skills-lock.json`) — skills de ingeniería; sus checklists compartidas están en `.claude/references/` (misma actualización con `npx skills update -p`; esa carpeta se copia a mano desde el repo de origen).
 - `.claude/agents/impeccable-qa.md` — agente de QA del sitio.
 - `.claude/agents/matt-researcher.md` — investigador de hechos: aplica la skill `research` y guarda lo que encuentra en `docs/research/`.
 - `.agents/product-marketing.md` — ficha base del negocio que leen las skills de marketing. Actualízala con la skill `product-marketing`.
@@ -78,5 +79,28 @@ Antes de investigar, clasifica el pedido y usa la herramienta que le toca. Si el
 | Una decisión que depende del cliente | `/to-questionnaire` |
 
 Los encargos de hechos se delegan a `matt-researcher`, no a un agente `general-purpose`. Si hace falta un agente genérico, que siga `.claude/skills/research/SKILL.md`: fuentes primarias, una cita por afirmación y el resultado en `docs/research/`.
+
+## Skills de ingeniería (addyosmani/agent-skills)
+
+Deciden cómo se construye y se revisa el código del sitio (`public/`) y del worker (`worker/`). No deciden marca ni marketing.
+
+| Pedido | Skill |
+|---|---|
+| Maquetar o cambiar una página o componente | `frontend-ui-engineering` + `hermes-wraps` (en lo visual gana `hermes-wraps`) |
+| Velocidad del sitio, Core Web Vitals, peso de imágenes | `performance-optimization` (checklist en `.claude/references/performance-checklist.md`) |
+| Formularios, el worker, datos de clientes, cabeceras (`_headers`) | `security-and-hardening` |
+| Un cambio grande: definirlo antes y partirlo en tareas | `spec-driven-development`, `planning-and-task-breakdown`, `incremental-implementation` |
+| Algo se rompió | `debugging-and-error-recovery` |
+| Revisar un cambio antes de fusionarlo | `code-review-and-quality` (y después `quality-insurance` si toca `public/`) |
+| Antes de publicar en producción | `shipping-and-launch` |
+| Documentar una decisión técnica | `documentation-and-adrs` |
+| Probar en el navegador real | `browser-testing-with-devtools` (necesita el MCP de Chrome DevTools) |
+
+Reglas:
+
+- `frontend-ui-engineering` no sustituye a `hermes-wraps`: colores, tipografía, componentes y textos salen de la marca.
+- `quality-insurance` sigue siendo obligatoria tras cualquier cambio en `public/`, aunque ya se haya usado `code-review-and-quality`.
+- Para poner a prueba un plan de marketing sigue usándose `/grill-me`. `interview-me` e `idea-refine` sirven para aclarar un pedido técnico poco definido.
+- `git-workflow-and-versioning` no cambia la rama ni las normas de commit de cada sesión.
 
 Las de SaaS (`paywalls`, `signup`, `onboarding`, `churn-prevention`, `aso`, `free-tools`, `revops`) no aplican a un taller de vinilo; no las recomiendes salvo que el pedido lo justifique.
